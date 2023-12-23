@@ -5,7 +5,7 @@ OS="$(uname)"
 
 if [ "$OS" == "Linux" ]; then
     sudo apt-get update
-    sudo apt-get install curl git zsh
+    sudo apt-get install curl zsh
 elif [ "$OS" == "Darwin" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
     brew install curl git zsh
