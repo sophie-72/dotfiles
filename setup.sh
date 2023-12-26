@@ -8,7 +8,7 @@ if [ "$OS" == "Linux" ]; then
     sudo apt-get install curl zsh neofetch
 elif [ "$OS" == "Darwin" ]; then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew install curl git zsh neofetch
+    brew install curl zsh neofetch
 fi
 
 # Change shell for zsh
