@@ -1,7 +1,7 @@
 # dotfiles
 
 ## Overview
-- Distro: [Kubuntu](https://kubuntu.org/)
+- Distro: [Arch](https://archlinux.org/)
 - DE: [Plasma](https://kde.org/plasma-desktop/)
 - WM: KWin
 - Grub Theme ([source](https://github.com/vinceliuice/grub2-themes)): Tela
