@@ -31,12 +31,13 @@ dotfiles config --local status.showUntrackedFiles no
 chmod +x setup.sh
 
 ./setup.sh
-
-source $HOME/.zshrc
 ```
 
 ## Replace the new .zshrc created by oh-my-zsh install by the old one
 ```
 rm .zshrc
+
 mv .zshrc.pre-oh-my-zsh .zshrc
+
+source $HOME/.zshrc
 ```
