@@ -51,6 +51,6 @@ chsh -s /usr/bin/zsh
 # Enter in neovim
 nvim
 
-### Run the following command in neovim
+# Run the following command in neovim
 :PlugInstall
 ```
