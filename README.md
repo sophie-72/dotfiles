@@ -45,4 +45,11 @@ source $HOME/.zshrc
 chsh -s /usr/bin/zsh
 ```
 
+## Install plugins for neovim
+```
+# Enter in neovim
+nvim
 
+### Run the following command in neovim
+:PlugInstall
+```
