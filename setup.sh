@@ -46,4 +46,4 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 # Setup grub theme
 git clone https://github.com/vinceliuice/grub2-themes.git
-sudo ./install.sh -b -t tela
+sudo ./install.sh -b -t stylish

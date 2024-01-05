@@ -4,7 +4,7 @@
 - Distro: [Arch](https://archlinux.org/)
 - DE: [Plasma](https://kde.org/plasma-desktop/)
 - WM: KWin
-- Grub Theme ([source](https://github.com/vinceliuice/grub2-themes)): Tela
+- Grub Theme ([source](https://github.com/vinceliuice/grub2-themes)): Stylish
 - Shell: zsh + [Oh My Zsh](https://ohmyz.sh/) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
 - Text Editors: [vim](https://www.vim.org/), [neovim](https://neovim.io/) and [Visual Studio Code](https://code.visualstudio.com/)
 
