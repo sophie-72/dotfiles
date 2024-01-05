@@ -21,8 +21,6 @@ git clone --bare https://github.com/0xSP3C14LN1NJ4/dotfiles.git $HOME/.dotfiles
 
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
-source $HOME/.zshrc
-
 dotfiles checkout
 
 dotfiles config --local status.showUntrackedFiles no
@@ -33,4 +31,6 @@ dotfiles config --local status.showUntrackedFiles no
 chmod +x setup.sh
 
 ./setup.sh
+
+source $HOME/.zshrc
 ```
