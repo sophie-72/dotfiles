@@ -33,11 +33,13 @@ chmod +x setup.sh
 ./setup.sh
 ```
 
-## Replace the new .zshrc created by oh-my-zsh install by the old one
+## Replace the new .zshrc created by oh-my-zsh install by the old one and change shell
 ```
 rm .zshrc
 
 mv .zshrc.pre-oh-my-zsh .zshrc
 
 source $HOME/.zshrc
+
+chsh -s /bin/zsh $USER
 ```
