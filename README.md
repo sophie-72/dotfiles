@@ -34,3 +34,7 @@ chmod +x setup.sh
 
 source $HOME/.zshrc
 ```
+
+## Replace the new .zshrc created by oh-my-zsh install by the old one
+rm .zshrc
+mv .zshrc.pre-oh-my-zsh .zshrc
