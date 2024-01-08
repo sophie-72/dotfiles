@@ -2,7 +2,7 @@
 
 # Install required packages
 sudo pacman -Sy
-sudo pacman -S curl zsh neofetch vim neovim nodejs npm code papirus-icon-theme
+sudo pacman -S curl zsh neofetch vim neovim nodejs npm papirus-icon-theme
 yay -Sy
 yay -S kwin-bismuth latte-dock-git lightlyshaders-git
 
