@@ -1,30 +1,10 @@
 #!/bin/bash
 
-# Detect the OS (either Linux, Mac OS)
-OS="$(uname)"
-
-# Detect the linux distribution
-PACKAGE_MANAGER=""
-
-if [ "$OS" == "Linux" ]; then
-    # Check if it's Ubuntu or Arch Linux
-    if [ -x "$(command -v apt-get)" ]; then
-        PACKAGE_MANAGER="apt-get"
-    elif [ -x "$(command -v pacman)" ]; then
-        PACKAGE_MANAGER="pacman"
-    fi
-
-    if [ "$PACKAGE_MANAGER" == "apt-get" ]; then
-        sudo apt-get update
-        sudo apt-get install curl zsh neofetch vim neovim
-    elif [ "$PACKAGE_MANAGER" == "pacman" ]; then
-        sudo pacman -Sy
-        sudo pacman -S curl zsh neofetch vim neovim nodejs npm code
-    fi
-elif [ "$OS" == "Darwin" ]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew install curl zsh neofetch vim neovim node
-fi
+# Install required packages
+sudo pacman -Sy
+sudo pacman -S curl zsh neofetch vim neovim nodejs npm code papirus-icon-theme
+yay -Sy
+yay -S kwin-bismuth latte-dock-git lightlyshaders-git
 
 # Change shell for zsh
 chsh -s /bin/zsh
