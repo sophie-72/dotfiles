@@ -6,11 +6,13 @@
 - WM: KWin + [kwin-bismuth](https://aur.archlinux.org/packages/kwin-bismuth)
 - Grub Theme ([source](https://github.com/vinceliuice/grub2-themes)): Stylish
 - Shell: zsh + [Oh My Zsh](https://ohmyz.sh/) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- Text Editors: [vim](https://www.vim.org/) + [neovim](https://neovim.io/) + [Visual Studio Code](https://code.visualstudio.com/)
+- Text Editors: [vim](https://www.vim.org/) + [neovim](https://neovim.io/)
 - Dock and task bar: [Latte Dock](https://github.com/KDE/latte-dock)
 - Global theme: [Otto](https://store.kde.org/p/1358262)
 - Desktop Effect: [LightlyShaders](https://aur.archlinux.org/packages/lightlyshaders-git)
 - Icons: [Papirus](https://store.kde.org/p/1166289/)
+
+**Note**: Otto theme needs to be installed manually
 
 ## Clone the repository
 ```
@@ -32,6 +34,7 @@ dotfiles config --local status.showUntrackedFiles no
 ```
 
 ## Setup
+**Note**: `yay` needs to be installed to run `setup.sh`
 ```
 chmod +x setup.sh
 
