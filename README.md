@@ -1,5 +1,9 @@
 # dotfiles
 
+## Screenshots
+![](screenshots/Desktop.png)
+![](screenshots/Konsole & Dolphin.png)
+
 ## Overview
 - Distro: [Arch](https://archlinux.org/)
 - DE: [Plasma](https://kde.org/plasma-desktop/)
