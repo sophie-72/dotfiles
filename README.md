@@ -2,7 +2,7 @@
 
 ## Screenshots
 ![](screenshots/Desktop.png)
-![](screenshots/Konsole & Dolphin.png)
+![](screenshots/Konsole-Dolphin.png)
 
 ## Overview
 - Distro: [Arch](https://archlinux.org/)
