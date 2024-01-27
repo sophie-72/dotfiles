@@ -60,6 +60,9 @@ tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"wi
 [Tiling][d31f808f-8dfe-578d-8cab-cb8f2f2ac30d]
 tiles={"layoutDirection":"horizontal","tiles":[{"width":0.25},{"width":0.5},{"width":0.25}]}
 
+[Windows]
+SeparateScreenFocus=true
+
 [Xwayland]
 Scale=1
 
