@@ -1,10 +1,11 @@
 # dotfiles
 
-## Screenshots
+## KDE
+### Screenshots
 ![](screenshots/Desktop.png)
 ![](screenshots/Konsole-Dolphin.png)
 
-## Overview
+### Overview
 - Distro: [Arch](https://archlinux.org/)
 - DE: [Plasma](https://kde.org/plasma-desktop/)
 - WM: KWin + [kwin-bismuth](https://aur.archlinux.org/packages/kwin-bismuth)
