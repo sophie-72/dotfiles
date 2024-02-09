@@ -1,4 +1,10 @@
 # dotfiles
+- Distro: [Arch](https://archlinux.org/)
+- Shell: zsh + [Oh My Zsh](https://ohmyz.sh/) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- Text Editors: [vim](https://www.vim.org/) + [neovim](https://neovim.io/)
+- Icons: [Papirus](https://archlinux.org/packages/extra/any/papirus-icon-theme/)
+- Display Manager: [SDDM](https://github.com/sddm/sddm/)
+
 
 ## KDE
 ### Screenshots
@@ -6,19 +12,28 @@
 ![](screenshots/Konsole-Dolphin.png)
 
 ### Overview
-- Distro: [Arch](https://archlinux.org/)
 - DE: [Plasma](https://kde.org/plasma-desktop/)
 - WM: KWin + [kwin-bismuth](https://aur.archlinux.org/packages/kwin-bismuth)
-- Grub Theme ([source](https://github.com/vinceliuice/grub2-themes)): Stylish
-- Shell: zsh + [Oh My Zsh](https://ohmyz.sh/) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- Text Editors: [vim](https://www.vim.org/) + [neovim](https://neovim.io/)
 - Dock and task bar: [Latte Dock](https://github.com/KDE/latte-dock)
 - Global theme: [Otto](https://store.kde.org/p/1358262)
 - Desktop Effect: [LightlyShaders](https://aur.archlinux.org/packages/lightlyshaders-git)
-- Icons: [Papirus](https://store.kde.org/p/1166289/)
 - Wallpaper: [Sweet-space](https://store.kde.org/p/1309907)
 
 **Note**: Otto theme needs to be installed manually
+
+
+## Hyprland
+### Screenshots
+
+### Overview
+- WM & compositor: [Hyprland](https://hyprland.org/)
+- Bar: [Waybar](https://github.com/Alexays/Waybar)
+- Global theme: [Catppuccin Macchiato](https://github.com/catppuccin/catppuccin)
+- Wallpaper: [https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png](https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png)
+- Application launcher: [Rofi](https://github.com/davatorium/rofi)
+- Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
+- Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
+
 
 ## Clone the repository
 ```
