@@ -4,6 +4,7 @@ set expandtab
 set autoindent
 set number
 set clipboard=unnamedplus
+set termguicolors
 
 call plug#begin()
 Plug 'preservim/nerdtree'
@@ -11,6 +12,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'github/copilot.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 call plug#end()
 
 " Configure NERDTree
@@ -33,5 +35,4 @@ set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_statusline_ontop = 0
-let g:airline_theme='dark'
-let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme='catppuccin_macchiato'
