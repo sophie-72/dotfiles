@@ -4,7 +4,6 @@
 sudo pacman -Sy
 sudo pacman -S curl zsh neofetch vim neovim nodejs npm papirus-icon-theme
 yay -Sy
-yay -S kwin-bismuth latte-dock-git lightlyshaders-git
 
 # Change shell for zsh
 chsh -s /bin/zsh
@@ -24,6 +23,3 @@ ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# Setup grub theme
-git clone https://github.com/vinceliuice/grub2-themes.git
-sudo ./install.sh -b -t stylish

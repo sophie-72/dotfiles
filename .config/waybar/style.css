@@ -1,0 +1,122 @@
+@import "macchiato.css";
+
+* {
+    /* `otf-font-awesome` is required to be installed for icons */
+    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+}
+
+window#waybar {
+    background-color: transparent;
+    color: @text;
+}
+
+button {
+    border: none;
+    border-radius: 0;
+}
+
+button:hover {
+    background: inherit;
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
+#workspaces,
+#window,
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-shutdown,
+#custom-updates { 
+    background: @base;
+    opacity: 0.7;
+    color: @text;
+    border-radius: 15px;
+    border: 0px;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 14px;
+}
+
+#clock,
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-quit,
+#custom-lock,
+#custom-reboot,
+#custom-shutdown,
+#custom-updates { 
+    padding: 0 10px;
+    margin: 0 2px;
+} 
+
+#window,
+#workspaces {
+    margin: 0 4px;
+}
+
+#workspaces {
+    padding: 0px 2px;
+    border-radius: 15px;
+    border: 0px;
+}
+
+#workspaces button {
+    padding: 0px 5px;
+    margin: 4px 2px;
+    border-radius: 15px;
+    border: 0px;
+    color: @text;
+    background: @maroon;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: @peach;
+    min-width: 40px;
+    transition: all 0.3s ease-in-out;
+    opacity:1.0;
+}
+
+#workspaces button:hover {
+    background: @yellow;
+}
+
+#battery.charging, #battery.plugged {
+    color: #ffffff;
+    background-color: #26A65B;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: #000000;
+    }
+}
+
+#battery.critical:not(.charging) {
+    background-color: #f53c3c;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
