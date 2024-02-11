@@ -6,10 +6,25 @@
 - Display Manager: [SDDM](https://github.com/sddm/sddm/)
 
 
+## Hyprland
+### Screenshots
+![](screenshots/Hyprland/Desktop.png)
+![](screenshots/Hyprland/Kitty.png)
+
+### Overview
+- WM & compositor: [Hyprland](https://hyprland.org/)
+- Bar: [Waybar](https://github.com/Alexays/Waybar)
+- Global theme: [Catppuccin Macchiato](https://github.com/catppuccin/catppuccin)
+- Wallpaper: [https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png](https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png)
+- Application launcher: [Rofi](https://github.com/davatorium/rofi)
+- Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
+- Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
+
+
 ## KDE
 ### Screenshots
-![](screenshots/Desktop.png)
-![](screenshots/Konsole-Dolphin.png)
+![](screenshots/KDE/Desktop.png)
+![](screenshots/KDE/Konsole-Dolphin.png)
 
 ### Overview
 - DE: [Plasma](https://kde.org/plasma-desktop/)
@@ -20,19 +35,6 @@
 - Wallpaper: [Sweet-space](https://store.kde.org/p/1309907)
 
 **Note**: Otto theme needs to be installed manually
-
-
-## Hyprland
-### Screenshots
-
-### Overview
-- WM & compositor: [Hyprland](https://hyprland.org/)
-- Bar: [Waybar](https://github.com/Alexays/Waybar)
-- Global theme: [Catppuccin Macchiato](https://github.com/catppuccin/catppuccin)
-- Wallpaper: [https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png](https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png)
-- Application launcher: [Rofi](https://github.com/davatorium/rofi)
-- Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
-- Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
 
 
 ## Clone the repository
