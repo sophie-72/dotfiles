@@ -84,7 +84,8 @@
     "custom/updates": {
         "format": "{}  ",
         "interval": 3600,                     // every hour
-        "exec": "yay -Qu | wc -l",
+        "exec": "${HOME}/.config/waybar/scripts/updates.sh",
+	"return-type": "json",
 	"exec-if": "exit 0",                  // always run; consider advanced run conditions
         "on-click": "kitty sh -c 'yay -Syu'; pkill -SIGRTMIN+8 waybar", // update system
         "signal": 8
