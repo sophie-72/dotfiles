@@ -44,3 +44,4 @@ highlight SignColumn guibg=#363a4f
 highlight GitGutterAdd guibg=#363a4f guifg=#009900 ctermfg=2
 highlight GitGutterChange guibg=#363a4f guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guibg=#363a4f guifg=#ff2222 ctermfg=1
+let g:gitgutter_git_args='--git-dir=$HOME/.dotfiles --work-tree=$HOME'
