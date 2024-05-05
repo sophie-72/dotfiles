@@ -33,10 +33,7 @@ button:hover {
 #network,
 #bluetooth,
 #pulseaudio,
-#custom-quit,
-#custom-lock,
-#custom-reboot,
-#custom-shutdown,
+#custom-power,
 #custom-updates { 
     background: @base;
     opacity: 0.7;
@@ -57,10 +54,7 @@ button:hover {
 #network,
 #bluetooth,
 #pulseaudio,
-#custom-quit,
-#custom-lock,
-#custom-reboot,
-#custom-shutdown,
+#custom-power,
 #custom-updates { 
     padding: 0 10px;
     margin: 0 2px;
