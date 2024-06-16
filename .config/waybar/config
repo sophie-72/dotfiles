@@ -106,7 +106,7 @@
     "custom/power": {
         "format": "",
         "tooltip": false,
-        "on-click": "rofi -show power-menu -modi 'power-menu:rofi-power-menu --confirm=lockscreen/logout/suspend/hibernate/reboot/shutdown'"
+        "on-click": "rofi -show power-menu -modi 'power-menu:~/.config/rofi/rofi-power-menu --confirm=lockscreen/logout/suspend/hibernate/reboot/shutdown'"
     },
 }
 
