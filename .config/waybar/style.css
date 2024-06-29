@@ -2,13 +2,14 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: Noto Sans Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
 }
 
 window#waybar {
     background-color: transparent;
     color: @text;
+    padding: 5px 10px;
 }
 
 button {
@@ -36,7 +37,7 @@ button:hover {
 #custom-power,
 #custom-updates { 
     opacity: 1;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 0px;
     font-weight: bold;
     font-style: normal;
@@ -46,65 +47,13 @@ button:hover {
 #workspaces,
 #window,
 #clock { 
-    background: @base;
+    background: @surface0;
     color: @text;
 }
 
-#custom-power,
-#network,
-#bluetooth,
-#pulseaudio,
-#custom-updates,
-#temperature,
-#disk,
-#memory,
-#cpu {
-    color: @crust
-}
-
-#custom-power {
-    background: @red;
-}
-
-#network {
-    background: @teal;
-}
-
-#bluetooth {
-    background: @blue;
-}
-
-#pulseaudio {
-    background: @lavender;
-}
-
-#custom-updates {
-    background: @mauve;
-}
-
-#temperature,
-#disk {
-    background: @peach;
-}
-
-#memory,
-#cpu {
-    background: @yellow;
-}
-
-#clock,
-#battery,
-#cpu,
-#memory,
-#disk,
-#temperature,
-#network,
-#bluetooth,
-#pulseaudio,
-#custom-power,
-#custom-updates { 
+#clock { 
     padding: 0 10px;
-    margin: 0 2px;
+    margin: 0 3px;
 } 
 
 #window,
@@ -114,14 +63,14 @@ button:hover {
 
 #workspaces {
     padding: 0px 2px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 0px;
 }
 
 #workspaces button {
     padding: 0px 5px;
     margin: 4px 2px;
-    border-radius: 15px;
+    border-radius: 10px;
     border: 0px;
     color: @text;
     background: @maroon;
@@ -139,35 +88,76 @@ button:hover {
     background: @yellow;
 }
 
+#battery,
+#cpu,
+#memory,
+#disk,
+#temperature,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-power,
+#custom-updates {
+    color: @base;
+    padding: 0 10px;
+    margin: 0 3px;
+}
+
 @keyframes blink {
     to {
         background-color: @text;
-        color: @crust;
+        color: @base;
     }
 }
 
 #battery.charging, #battery.plugged, #battery.good {
     background: @green;
-    color: @crust;
 }
 
 #battery.okay:not(.charging) {
     background: @yellow;
-    color: @crust;
 }
 
 #battery.warning:not(.charging) {
     background: @peach;
-    color: @crust;
 }
 
 #battery.critical:not(.charging) {
     background-color: @red;
-    color: @crust;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
+}
+
+#cpu,
+#memory {
+    background: @yellow;
+}
+
+#disk,
+#temperature {
+    background: @peach;
+}
+
+#network {
+    background: @teal;
+}
+
+#bluetooth {
+    background: @blue;
+}
+
+#pulseaudio {
+    background: @lavender;
+}
+
+#custom-power {
+    background: @red;
+}
+
+#custom-updates {
+    background: @mauve;
 }
 
