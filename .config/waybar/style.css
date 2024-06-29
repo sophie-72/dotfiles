@@ -3,7 +3,7 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 window#waybar {
@@ -35,14 +35,61 @@ button:hover {
 #pulseaudio,
 #custom-power,
 #custom-updates { 
-    background: @base;
-    opacity: 0.7;
-    color: @text;
+    opacity: 1;
     border-radius: 15px;
     border: 0px;
     font-weight: bold;
     font-style: normal;
     font-size: 14px;
+}
+
+#workspaces,
+#window,
+#clock { 
+    background: @base;
+    color: @text;
+}
+
+#custom-power,
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-updates,
+#temperature,
+#disk,
+#memory,
+#cpu {
+    color: @crust
+}
+
+#custom-power {
+    background: @red;
+}
+
+#network {
+    background: @teal;
+}
+
+#bluetooth {
+    background: @blue;
+}
+
+#pulseaudio {
+    background: @lavender;
+}
+
+#custom-updates {
+    background: @mauve;
+}
+
+#temperature,
+#disk {
+    background: @peach;
+}
+
+#memory,
+#cpu {
+    background: @yellow;
 }
 
 #clock,
@@ -92,21 +139,31 @@ button:hover {
     background: @yellow;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
-}
-
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: @text;
+        color: @crust;
     }
 }
 
+#battery.charging, #battery.plugged, #battery.good {
+    background: @green;
+    color: @crust;
+}
+
+#battery.okay:not(.charging) {
+    background: @yellow;
+    color: @crust;
+}
+
+#battery.warning:not(.charging) {
+    background: @peach;
+    color: @crust;
+}
+
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    background-color: @red;
+    color: @crust;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
