@@ -17,6 +17,7 @@
 - Global theme: [Catppuccin Macchiato](https://github.com/catppuccin/catppuccin)
 - Wallpaper: [https://github.com/Gingeh/wallpapers/blob/main/os/arch-black-4k.png](https://github.com/Gingeh/wallpapers/blob/main/os/arch-black-4k.png)
 - Application launcher: [Rofi](https://github.com/lbonn/rofi)
+- Power menu: [Rofi Power Menu](https://github.com/jluttine/rofi-power-menu)
 - Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
 - Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
 
