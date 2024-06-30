@@ -15,7 +15,7 @@
 - WM & compositor: [Hyprland](https://hyprland.org/)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
 - Global theme: [Catppuccin Macchiato](https://github.com/catppuccin/catppuccin)
-- Wallpaper: [https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png](https://github.com/Gingeh/wallpapers/blob/main/landscapes/forrest.png)
+- Wallpaper: [https://github.com/Gingeh/wallpapers/blob/main/os/arch-black-4k.png](https://github.com/Gingeh/wallpapers/blob/main/os/arch-black-4k.png)
 - Application launcher: [Rofi](https://github.com/davatorium/rofi)
 - Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
 - Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
