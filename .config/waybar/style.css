@@ -1,4 +1,4 @@
-@import "macchiato.css";
+@import "rose-pine-moon.css";
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -46,7 +46,7 @@ button:hover {
 #workspaces,
 #window,
 #clock { 
-    background: @surface0;
+    background: @surface;
     color: @text;
 }
 
@@ -72,19 +72,19 @@ button:hover {
     border-radius: 10px;
     border: 0px;
     color: @text;
-    background: @maroon;
+    background: @pine;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background: @peach;
+    background: @foam;
     min-width: 40px;
     transition: all 0.3s ease-in-out;
     opacity:1.0;
 }
 
 #workspaces button:hover {
-    background: @yellow;
+    background: @iris;
 }
 
 #battery,
@@ -110,19 +110,19 @@ button:hover {
 }
 
 #battery.charging, #battery.plugged, #battery.good {
-    background: @green;
+    background: @pine;
 }
 
 #battery.okay:not(.charging) {
-    background: @yellow;
+    background: @gold;
 }
 
 #battery.warning:not(.charging) {
-    background: @peach;
+    background: @gold;
 }
 
 #battery.critical:not(.charging) {
-    background-color: @red;
+    background-color: @love;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -132,31 +132,31 @@ button:hover {
 
 #cpu,
 #memory {
-    background: @yellow;
+    background: @rose;
 }
 
 #disk,
 #temperature {
-    background: @peach;
+    background: @rose;
 }
 
 #network {
-    background: @teal;
+    background: @gold;
 }
 
 #bluetooth {
-    background: @blue;
+    background: @gold;
 }
 
 #pulseaudio {
-    background: @lavender;
+    background: @gold;
 }
 
 #custom-power {
-    background: @red;
+    background: @love;
 }
 
 #custom-updates {
-    background: @mauve;
+    background: @pine;
 }
 
