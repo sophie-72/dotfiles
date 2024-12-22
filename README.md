@@ -6,7 +6,7 @@
 - Display Manager: [SDDM](https://github.com/sddm/sddm/)
 - WM & compositor: [Hyprland](https://hyprland.org/)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
-- Global theme: [Rosé Pine](https://rosepinetheme.com/)
+- Global theme: [Rosé Pine Moon](https://rosepinetheme.com/)
 - Wallpaper: [https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png](https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png)
 - Application launcher: [Rofi](https://github.com/lbonn/rofi)
 - Power menu: [Rofi Power Menu](https://github.com/jluttine/rofi-power-menu)
