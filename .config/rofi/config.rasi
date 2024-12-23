@@ -21,4 +21,4 @@ configuration {
       sorting-method:    "name";
   }
 }
-@theme "~/.config/rofi/themes/catppuccin-macchiato.rasi"
+@theme "~/.config/rofi/themes/rose-pine-moon.rasi"
