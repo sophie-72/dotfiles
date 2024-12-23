@@ -4,7 +4,7 @@
 - Text Editors: [vim](https://www.vim.org/) + [neovim](https://neovim.io/)
 - Icons: [Papirus](https://archlinux.org/packages/extra/any/papirus-icon-theme/)
 - Display Manager: [SDDM](https://github.com/sddm/sddm/)
-- WM & compositor: [Hyprland](https://hyprland.org/)
+- Compositor: [Hyprland](https://hyprland.org/)
 - Bar: [Waybar](https://github.com/Alexays/Waybar)
 - Global theme: [Rosé Pine Moon](https://rosepinetheme.com/)
 - Wallpaper: [https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png](https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png)
