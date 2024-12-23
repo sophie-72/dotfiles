@@ -23,3 +23,10 @@ ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
+# Copy SDDM config files
+cp .config/sddm/default.conf /etc/sddm.conf.d/
+git clone https://github.com/lwndhrst/sddm-rose-pine.git
+cp -r sddm-rose-pine /usr/share/sddm/themes/
+cp .config/sddm/theme.conf.user /usr/share/sddm/themes/sddm-rose-pine/
+cp .config/sddm/blockwavemoon.png /usr/share/sddm/themes/sddm-rose-pine/
+
