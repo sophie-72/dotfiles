@@ -13,6 +13,7 @@
 - Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
 - Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
 
+![](screenshots/Hyprland/SDDM.png)
 ![](screenshots/Hyprland/Desktop.png)
 ![](screenshots/Hyprland/Kitty.png)
 
