@@ -1,17 +1,17 @@
 * {
-	base: #232136;
-	surface: #2a273f;
-	text: #e0def4;
-	muted: #6e6a86;
-	foam: #9ccfd8;
-	pine: #3e8fb0;
-	rose: #ea9a97;
-	iris: #c4a7e7;
-	love: #eb6f92;
-	gold: #f6c177;
+    base: #232136;
+    surface: #2a273f;
+    text: #e0def4;
+    muted: #6e6a86;
+    foam: #9ccfd8;
+    pine: #3e8fb0;
+    rose: #ea9a97;
+    iris: #c4a7e7;
+    love: #eb6f92;
+    gold: #f6c177;
 
-	selected-background: @pine;
-	bordercolor: @gold;
+    selected-background: @pine;
+    bordercolor: @gold;
 
     font: "Noto Sans Mono 14";
     width: 600px;
@@ -21,26 +21,26 @@
 
 window {
     height:           360px;
-	border:           3px;
-	border-radius:    6px;
-	border-color:     @bordercolor;
-	padding:          5px;
+    border:           3px;
+    border-radius:    6px;
+    border-color:     @bordercolor;
+    padding:          5px;
 }
 
 mainbox {
-	border:  0px;
-	padding: 5px;
+    border:  0px;
+    padding: 5px;
 }
 
 inputbar {
-	children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
+    children:   [ prompt,textbox-prompt-colon,entry,case-indicator ];
     spacing:    0;
     padding:    1px;
 }
 
 prompt {
-	spacing:    0;
-	text-color: @pine;
+    spacing:    0;
+    text-color: @pine;
 }
 
 textbox-prompt-colon {
@@ -51,21 +51,21 @@ textbox-prompt-colon {
 }
 
 listview {
-	fixed-height: 0;
-	border:       2px dash 0px 0px ;
-	border-color: @bordercolor;
-	spacing:      2px ;
-	scrollbar:    false;
-	padding:      2px 0px 0px ;
+    fixed-height: 0;
+    border:       2px dash 0px 0px ;
+    border-color: @bordercolor;
+    spacing:      2px ;
+    scrollbar:    false;
+    padding:      2px 0px 0px ;
 }
 
 element {
-	border:  0;
-	padding: 1px;
+    border:  0;
+    padding: 1px;
 }
 
 element selected {
-	background-color:   @selected-background;
+    background-color:   @selected-background;
     border-radius:      6px;
 }
 
