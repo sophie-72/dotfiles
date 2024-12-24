@@ -20,7 +20,7 @@
 }
 
 window {
-    height: 360px;
+    height:           360px;
 	border:           3px;
 	border-radius:    6px;
 	border-color:     @bordercolor;
@@ -44,10 +44,10 @@ prompt {
 }
 
 textbox-prompt-colon {
-    expand: false;
-    str: ":";
+    expand:     false;
+    str:        ":";
     text-color: @pine;
-    width: 20px;
+    width:      20px;
 }
 
 listview {
@@ -65,8 +65,8 @@ element {
 }
 
 element selected {
-	background-color: @selected-background;
-    border-radius: 6px;
+	background-color:   @selected-background;
+    border-radius:      6px;
 }
 
 element-text selected {
