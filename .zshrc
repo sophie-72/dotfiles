@@ -119,3 +119,5 @@ autoload -U compinit; compinit
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="/usr/local/opt/llvm/bin:$PATH"
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
