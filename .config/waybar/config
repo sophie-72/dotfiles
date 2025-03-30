@@ -39,11 +39,6 @@
     	"format": "{percentage_free}% remaining on {path}",
     	"path": "/"
     },
-    "temperature": {
-        "critical-threshold": 80,
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": [""]
-    },
     "battery": {
         "states": {
             "good": 100,
@@ -100,9 +95,8 @@
 	"modules": [
 	    "battery",
 	    "cpu",
-            "memory",
+        "memory",
 	    "disk",
-	    "temperature",
 	]
     },
     "custom/power": {
