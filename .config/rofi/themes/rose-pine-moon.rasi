@@ -11,7 +11,7 @@
     gold: #f6c177;
 
     selected-background: @pine;
-    bordercolor: @gold;
+    bordercolor: @rose;
 
     font: "Noto Sans Mono 14";
     width: 600px;
