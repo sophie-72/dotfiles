@@ -1,7 +1,5 @@
 #!/bin/bash
 
-exec > ~/.config/bluetooth_monitor.log 2>&1
-
 # Store the previous state of connected devices
 previous_devices=()
 
