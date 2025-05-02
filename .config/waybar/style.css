@@ -35,7 +35,8 @@ button:hover {
 #bluetooth,
 #pulseaudio,
 #custom-power,
-#custom-updates { 
+#custom-updates,
+#custom-keyboard-layout { 
     opacity: 1;
     border-radius: 10px;
     border: 0px;
@@ -96,7 +97,8 @@ button:hover {
 #bluetooth,
 #pulseaudio,
 #custom-power,
-#custom-updates {
+#custom-updates,
+#custom-keyboard-layout {
     color: @base;
     padding: 0 10px;
     margin: 0 3px;
@@ -109,14 +111,13 @@ button:hover {
     }
 }
 
-#battery.charging, #battery.plugged, #battery.good {
+#battery.charging,
+#battery.plugged,
+#battery.good {
     background: @pine;
 }
 
-#battery.okay:not(.charging) {
-    background: @gold;
-}
-
+#battery.okay:not(.charging),
 #battery.warning:not(.charging) {
     background: @gold;
 }
@@ -131,24 +132,15 @@ button:hover {
 }
 
 #cpu,
-#memory {
+#memory,
+#disk {
     background: @rose;
 }
 
-#disk,
-#temperature {
-    background: @rose;
-}
-
-#network {
-    background: @gold;
-}
-
-#bluetooth {
-    background: @gold;
-}
-
-#pulseaudio {
+#network,
+#bluetooth,
+#pulseaudio,
+#custom-keyboard-layout {
     background: @gold;
 }
 

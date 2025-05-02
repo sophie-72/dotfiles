@@ -7,7 +7,7 @@
     "margin-right": 10,
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/updates", "pulseaudio", "bluetooth", "network", "group/hardware", "custom/power"],
+    "modules-right": ["custom/updates", "custom/keyboard-layout", "pulseaudio", "bluetooth", "network", "group/hardware", "custom/power"],
     "hyprland/workspaces": {
 	"format": "",
 	"on-click": "activate",
@@ -104,5 +104,10 @@
         "tooltip": false,
         "on-click": "rofi -show power-menu -modi 'power-menu:rofi-power-menu --confirm=lockscreen/logout/suspend/hibernate/reboot/shutdown'"
     },
+    "custom/keyboard-layout": {
+        "format": "{} ",
+        "interval": 1,
+        "exec": "${HOME}/.config/waybar/scripts/get-keyboard-layout.sh"
+    }
 }
-
+    
