@@ -3,28 +3,14 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: Noto Sans Mono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 window#waybar {
     background-color: transparent;
-    color: @text;
-    padding: 5px 10px;
-}
-
-button {
-    border: none;
-    border-radius: 0;
-}
-
-button:hover {
-    background: inherit;
-    box-shadow: inherit;
-    text-shadow: inherit;
 }
 
 #workspaces,
-#window,
 #clock,
 #battery,
 #cpu,
@@ -37,57 +23,33 @@ button:hover {
 #custom-power,
 #custom-updates,
 #custom-keyboard-layout { 
-    opacity: 1;
+    background: @baseTransparent;
     border-radius: 10px;
-    border: 0px;
     font-weight: bold;
     font-style: normal;
 }
 
-#workspaces,
-#window,
-#clock { 
-    background: @surface;
-    color: @text;
-}
-
-#clock { 
-    padding: 0 10px;
-    margin: 0 3px;
-} 
-
-#window,
-#workspaces {
-    margin: 0 4px;
-}
 
 #workspaces {
-    padding: 0px 2px;
-    border-radius: 10px;
-    border: 0px;
+    color: @pine;
 }
 
 #workspaces button {
-    padding: 0px 5px;
-    margin: 4px 2px;
-    border-radius: 10px;
-    border: 0px;
-    color: @text;
-    background: @pine;
+    border-radius: 50%;
+    color: @muted;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    background: @foam;
-    min-width: 40px;
+    color: @pine;
     transition: all 0.3s ease-in-out;
-    opacity:1.0;
 }
 
 #workspaces button:hover {
-    background: @iris;
+    background: @surface;
 }
 
+#clock,
 #battery,
 #cpu,
 #memory,
@@ -99,31 +61,34 @@ button:hover {
 #custom-power,
 #custom-updates,
 #custom-keyboard-layout {
-    color: @base;
     padding: 0 10px;
     margin: 0 3px;
 }
 
-@keyframes blink {
-    to {
-        background-color: @text;
-        color: @base;
-    }
-}
+#clock { 
+    color: @iris;
+} 
 
 #battery.charging,
 #battery.plugged,
 #battery.good {
-    background: @pine;
+    color: @pine;
 }
 
 #battery.okay:not(.charging),
 #battery.warning:not(.charging) {
-    background: @gold;
+    color: @gold;
+}
+
+@keyframes blink {
+    to {
+        background: @love;
+        color: @baseTransparent;
+    }
 }
 
 #battery.critical:not(.charging) {
-    background-color: @love;
+    color: @love;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -134,21 +99,21 @@ button:hover {
 #cpu,
 #memory,
 #disk {
-    background: @rose;
+    color: @rose;
 }
 
 #network,
 #bluetooth,
 #pulseaudio,
 #custom-keyboard-layout {
-    background: @gold;
+    color: @gold;
 }
 
 #custom-power {
-    background: @love;
+    color: @love;
 }
 
 #custom-updates {
-    background: @pine;
+    color: @pine;
 }
 

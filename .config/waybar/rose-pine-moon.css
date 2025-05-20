@@ -4,6 +4,7 @@
 */
 
 @define-color base            #232136;
+@define-color baseTransparent rgba(35, 33, 54, 0.95);
 @define-color surface         #2a273f;
 @define-color overlay         #393552;
 
