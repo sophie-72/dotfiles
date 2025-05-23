@@ -10,6 +10,11 @@ window#waybar {
     background-color: transparent;
 }
 
+tooltip {
+    background: @baseTransparent;
+    border: none;
+}
+
 #workspaces,
 #clock,
 #battery,
