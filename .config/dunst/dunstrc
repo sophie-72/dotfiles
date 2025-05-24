@@ -1,6 +1,6 @@
 [global]
     width = 400
-    offset = 5x5
+    offset = (5, 5)
     
     progress_bar_min_width = 380
     progress_bar_max_width = 380
@@ -8,13 +8,13 @@
 
     padding = 10
     horizontal_padding = 10
-    frame_width = 1
+    frame_width = 3
     gap_size = 3
-    font = "Monospace 14"
+    font = "Noto Sans Mono 14"
 
     icon_theme = "rose-pine-icons"
     enable_recursive_icon_lookup = true
-    corner_radius = 2
+    corner_radius = 10
 
     background = "#393552"
     foreground = "#e0def4"
