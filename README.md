@@ -11,7 +11,7 @@
 - Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
 - Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
 - Global theme: [Rosé Pine Moon](https://rosepinetheme.com/)
-- Wallpaper: [https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png](https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png)
+- Lock Screen Wallpaper: [https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png](https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png)
 
 ![](screenshots/Hyprland/SDDM.png)
 ![](screenshots/Hyprland/Desktop.png)
