@@ -25,7 +25,7 @@ git clone https://github.com/sophie-72/dotfiles.git
 
 ## Or clone the repository as a bare repository
 **Warning**
-It may overwrites existing files in your home directory. Please ensure to backup any important files before proceeding.
+This may overwrite existing files in your home directory. Please ensure you backup any important files before proceeding.
 
 ```
 git clone --bare https://github.com/sophie-72/dotfiles.git $HOME/.dotfiles
@@ -38,7 +38,6 @@ dotfiles config --local status.showUntrackedFiles no
 ```
 
 ## Setup
-**Note**: `yay` needs to be installed to run `setup.sh`
 ```
 chmod +x setup.sh
 
@@ -57,9 +56,9 @@ source $HOME/.zshrc
 chsh -s /usr/bin/zsh
 ```
 
-## Install plugins for neovim
+## Install neovim plugins
 ```
-# Enter in neovim
+# Enter neovim
 nvim
 
 # Run the following command in neovim
