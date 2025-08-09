@@ -1,11 +1,13 @@
 #!/bin/bash
 
 echo "Installing Paru"
-sudo pacman -S --needed base-devel
-git clone https://aur.archlinux.org/paru.git
-cd paru
-makepkg -si
-cd ..
+if ! pacman -Qi paru > /dev/null; then
+    sudo pacman -S --needed base-devel
+    git clone https://aur.archlinux.org/paru.git
+    cd paru
+    makepkg -si
+    cd ..
+fi
 
 echo "Installing required packages"
 paru -S --needed curl zsh vim neovim nodejs papirus-icon-theme sddm hyprland waybar rofi-wayland rofi-power-menu dunst kitty
