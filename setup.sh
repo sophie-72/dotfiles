@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install required packages
-sudo pacman -S --needed curl zsh vim neovim nodejs npm papirus-icon-theme
+sudo pacman -S --needed curl zsh vim neovim nodejs papirus-icon-theme
 
 # Change shell for zsh
 chsh -s /bin/zsh
