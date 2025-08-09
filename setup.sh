@@ -1,7 +1,13 @@
 #!/bin/bash
 
+# Install Paru
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg -si
+cd ..
+
 # Install required packages
-sudo pacman -S --needed curl zsh vim neovim nodejs papirus-icon-theme
+paru -S --needed curl zsh vim neovim nodejs papirus-icon-theme sddm hyprland waybar rofi-wayland rofi-power-menu dunst kitty
 
 # Change shell for zsh
 chsh -s /bin/zsh
