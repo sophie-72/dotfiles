@@ -7,7 +7,7 @@ sudo pacman -S --needed curl zsh vim neovim nodejs papirus-icon-theme
 chsh -s /bin/zsh
 
 # Install oh-my-zsh and plugins
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+[ ! -d ~/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
 [ ! -d ~/.oh-my-zsh/custom/themes/powerlevel10k ] && git clone https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/themes/powerlevel10k
 
