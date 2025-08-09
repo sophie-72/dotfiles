@@ -26,7 +26,7 @@ chsh -s /bin/zsh
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # Copy SDDM config files
-mkdir /etc/sddm.conf.d/
+sudo mkdir /etc/sddm.conf.d/
 cp .config/sddm/default.conf /etc/sddm.conf.d/
 [ ! -d "sddm-rose-pine" ] && git clone https://github.com/lwndhrst/sddm-rose-pine.git
 cp -r sddm-rose-pine /usr/share/sddm/themes/
