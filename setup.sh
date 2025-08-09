@@ -30,6 +30,6 @@ sudo mkdir /etc/sddm.conf.d/
 sudo cp .config/sddm/default.conf /etc/sddm.conf.d/
 [ ! -d "sddm-rose-pine" ] && git clone https://github.com/lwndhrst/sddm-rose-pine.git
 sudo cp -r sddm-rose-pine /usr/share/sddm/themes/
-cp .config/sddm/theme.conf.user /usr/share/sddm/themes/sddm-rose-pine/
-cp .config/sddm/blockwavemoon.png /usr/share/sddm/themes/sddm-rose-pine/
+sudo cp .config/sddm/theme.conf.user /usr/share/sddm/themes/sddm-rose-pine/
+sudo cp .config/sddm/blockwavemoon.png /usr/share/sddm/themes/sddm-rose-pine/
 
