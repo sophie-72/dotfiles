@@ -11,7 +11,7 @@ cd ..
 paru -S --needed curl zsh vim neovim nodejs papirus-icon-theme sddm hyprland waybar rofi-wayland rofi-power-menu dunst kitty
 
 # Change shell for zsh
-chsh -s /bin/zsh
+chsh -s /usr/bin/zsh
 
 # Install oh-my-zsh and plugins
 [ ! -d ~/.oh-my-zsh ] && sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
