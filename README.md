@@ -38,22 +38,29 @@ dotfiles config --local status.showUntrackedFiles no
 ```
 
 ## Setup
+**Reboot after running the script**
 ```
 chmod +x setup.sh
 
 ./setup.sh
 ```
 
-## Replace the new .zshrc created by oh-my-zsh install by the old one and change shell
-**Reboot after changing shell**
+## Replace the new .zshrc created by the Oh My Zsh installation by the old one
 ```
 rm .zshrc
 
 mv .zshrc.pre-oh-my-zsh .zshrc
 
 source $HOME/.zshrc
+```
 
-chsh -s /usr/bin/zsh
+## Install vim plugins
+```
+# Enter vim
+vim
+
+# Run the following command in vim
+:PlugInstall
 ```
 
 ## Install neovim plugins
