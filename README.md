@@ -18,13 +18,10 @@
 ![](screenshots/Hyprland/Kitty.png)
 
 
-## Clone the repository
-```
-git clone https://github.com/sophie-72/dotfiles.git
-```
+## Clone the repository as a bare repository
 
-## Or clone the repository as a bare repository
 **Warning**
+
 This may overwrite existing files in your home directory. Please ensure you backup any important files before proceeding.
 
 ```
@@ -38,14 +35,17 @@ dotfiles config --local status.showUntrackedFiles no
 ```
 
 ## Setup
-**Reboot after running the script**
-```
-chmod +x setup.sh
 
+1. Run `setup.sh`
+
+```
 ./setup.sh
 ```
 
-## Replace the new .zshrc created by the Oh My Zsh installation by the old one
+2. Reboot
+
+3. Replace the new .zshrc created by the Oh My Zsh installation by the old one
+
 ```
 rm .zshrc
 
@@ -54,10 +54,11 @@ mv .zshrc.pre-oh-my-zsh .zshrc
 source $HOME/.zshrc
 ```
 
-## Enable SDDM
+4. Enable SDDM
+
 ```
 sudo systemctl enable sddm
 ```
 
-## Reboot
+5. Reboot
 
