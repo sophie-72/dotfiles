@@ -12,13 +12,6 @@ fi
 echo "Installing required packages"
 paru -S --needed curl zsh vim neovim nodejs npm papirus-icon-theme sddm hyprland hyprpaper hypridle hyprlock xdg-desktop-portal-hyprland hyprpolkitagent udiskie waybar rofi-wayland rofi-power-menu dunst kitty qt5-base qt5-graphicaleffects qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 otf-font-awesome grim slurp wl-clipboard
 
-echo "Changing shell for zsh"
-zsh_shell=/usr/bin/zsh
-current_shell=$(cat /etc/passwd | grep `cd; pwd` | awk -F: '{print $7}')
-if [[ "$zsh_shell" != "$current_shell" ]]; then
-    chsh -s /usr/bin/zsh
-fi
-
 echo "Installing oh-my-zsh and plugins"
 if [ ! -d ~/.oh-my-zsh ]; then
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
