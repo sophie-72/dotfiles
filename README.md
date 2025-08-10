@@ -54,26 +54,10 @@ mv .zshrc.pre-oh-my-zsh .zshrc
 source $HOME/.zshrc
 ```
 
-## Install vim plugins
-```
-# Enter vim
-vim
-
-# Run the following command in vim
-:PlugInstall
-```
-
-## Install neovim plugins
-```
-# Enter neovim
-nvim
-
-# Run the following command in neovim
-:PlugInstall
-```
-
 ## Enable SDDM
 ```
 sudo systemctl enable sddm
 ```
+
+## Reboot
 
