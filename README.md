@@ -44,21 +44,3 @@ dotfiles config --local status.showUntrackedFiles no
 
 2. Reboot
 
-3. Replace the new .zshrc created by the Oh My Zsh installation by the old one
-
-```
-rm .zshrc
-
-mv .zshrc.pre-oh-my-zsh .zshrc
-
-source $HOME/.zshrc
-```
-
-4. Enable SDDM
-
-```
-sudo systemctl enable sddm
-```
-
-5. Reboot
-
