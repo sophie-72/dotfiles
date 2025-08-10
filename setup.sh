@@ -10,7 +10,7 @@ if ! pacman -Qi paru > /dev/null; then
 fi
 
 echo "Installing required packages"
-paru -S --needed curl zsh vim neovim nodejs npm papirus-icon-theme sddm hyprland hyprpaper hypridle hyprlock xdg-desktop-portal-hyprland hyprpolkitagent udiskie waybar rofi-wayland rofi-power-menu dunst kitty qt5-base qt5-graphicaleffects qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 otf-font-awesome
+paru -S --needed curl zsh vim neovim nodejs npm papirus-icon-theme sddm hyprland hyprpaper hypridle hyprlock xdg-desktop-portal-hyprland hyprpolkitagent udiskie waybar rofi-wayland rofi-power-menu dunst kitty qt5-base qt5-graphicaleffects qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 otf-font-awesome grim slurp wl-clipboard
 
 echo "Changing shell for zsh"
 zsh_shell=/usr/bin/zsh
