@@ -64,3 +64,9 @@ nvim
 # Run the following command in neovim
 :PlugInstall
 ```
+
+## Enable SDDM
+```
+sudo systemctl enable sddm
+```
+
