@@ -17,7 +17,6 @@ endif
 call plug#begin()
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'github/copilot.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'rose-pine/vim', { 'as': 'rose-pine' }
 Plug 'airblade/vim-gitgutter'
