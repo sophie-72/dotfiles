@@ -20,9 +20,7 @@
 
 ## Clone the repository as a bare repository
 
-**Warning**
-
-This may overwrite existing files in your home directory. Please ensure you backup any important files before proceeding.
+**Warning:** This may overwrite existing files in your home directory. Please ensure you backup any important files before proceeding.
 
 ```
 git clone --bare https://github.com/sophie-72/dotfiles.git $HOME/.dotfiles
@@ -36,11 +34,11 @@ dotfiles config --local status.showUntrackedFiles no
 
 ## Setup
 
-1. Run `setup.sh`
+1. Run the setup script:
 
 ```
 ./setup.sh
 ```
 
-2. Reboot
+2. Reboot your system
 
