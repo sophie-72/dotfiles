@@ -20,7 +20,7 @@
 
 ## Clone the repository as a bare repository
 
-**Warning:** This may overwrite existing files in your home directory. Please ensure you backup any important files before proceeding.
+**Warning:** This may overwrite existing files in your home directory. Please ensure you back up any important files before proceeding.
 
 ```
 git clone --bare https://github.com/sophie-72/dotfiles.git $HOME/.dotfiles
