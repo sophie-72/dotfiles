@@ -8,6 +8,12 @@ Scope {
             required property var modelData
             screen: modelData
 
+            margins {
+                bottom: 10
+                top: 10
+                left: 10
+            }
+
             anchors {
                 bottom: true
                 top: true
