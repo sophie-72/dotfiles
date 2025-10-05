@@ -16,6 +16,8 @@ Scope {
 
             implicitHeight: 30
 
+            color: Theme.get.backgroundColor
+
             ClockWidget {
                 anchors.centerIn: parent
             }
