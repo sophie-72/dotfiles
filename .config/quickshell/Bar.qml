@@ -1,4 +1,5 @@
 import Quickshell
+import QtQuick
 
 Scope {
     Variants {
@@ -22,7 +23,14 @@ Scope {
 
             implicitWidth: 40
 
-            color: Theme.get.backgroundColor
+            color: "transparent"
+
+            Rectangle {
+                width: parent.width
+                height: parent.height
+                radius: 10
+                color: Theme.get.backgroundColor
+            }
 
             ClockWidget {
                 anchors.centerIn: parent
