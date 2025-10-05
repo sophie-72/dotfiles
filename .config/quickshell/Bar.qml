@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import QtQuick.Layouts
 
 Scope {
     Variants {
@@ -31,9 +32,16 @@ Scope {
                 color: Theme.get.backgroundColor
             }
 
-            ClockWidget {
-                anchors.horizontalCenter: parent.horizontalCenter
+            ColumnLayout {
                 anchors.bottom: parent.bottom
+                
+                Battery {
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                ClockWidget {
+                    Layout.alignment: Qt.AlignHCenter
+                }
             }
         }
     }
