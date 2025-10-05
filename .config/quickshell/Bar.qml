@@ -32,7 +32,8 @@ Scope {
             }
 
             ClockWidget {
-                anchors.centerIn: parent
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottom: parent.bottom
             }
         }
     }
