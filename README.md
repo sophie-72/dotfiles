@@ -1,7 +1,7 @@
 # dotfiles
 - Distro: [Arch](https://archlinux.org/)
 - Shell: zsh + [Oh My Zsh](https://ohmyz.sh/) + [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- Text Editors: [vim](https://www.vim.org/) + [neovim](https://neovim.io/)
+- Text Editor: [Helix](https://helix-editor.com/)
 - Icons: [Papirus](https://github.com/PapirusDevelopmentTeam/papirus-icon-theme)
 - Display Manager: [SDDM](https://github.com/sddm/sddm/)
 - Compositor: [Hyprland](https://hyprland.org/)
