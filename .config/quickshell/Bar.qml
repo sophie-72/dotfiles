@@ -9,12 +9,12 @@ Scope {
             screen: modelData
 
             anchors {
+                bottom: true
                 top: true
                 left: true
-                right: true
             }
 
-            implicitHeight: 30
+            implicitWidth: 40
 
             color: Theme.get.backgroundColor
 
