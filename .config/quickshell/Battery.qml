@@ -1,7 +1,10 @@
+pragma Singleton
+
 import QtQuick
+import Quickshell
 import Quickshell.Services.UPower
 
-Text {
-    text: (UPower.displayDevice.percentage * 100) + "%"
-    color: Theme.get.textColor
+Singleton {
+    readonly property UPowerDevice device: UPower.displayDevice
+    readonly property real percentage: UPower.displayDevice.percentage
 }
