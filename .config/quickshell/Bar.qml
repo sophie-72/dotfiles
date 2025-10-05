@@ -34,7 +34,8 @@ Scope {
 
             ColumnLayout {
                 anchors.bottom: parent.bottom
-                
+                anchors.horizontalCenter: parent.horizontalCenter
+                                
                 BatteryWidget {
                     Layout.alignment: Qt.AlignHCenter
                 }
