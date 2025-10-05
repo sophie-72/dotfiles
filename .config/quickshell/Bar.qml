@@ -26,8 +26,7 @@ Scope {
             color: "transparent"
 
             Rectangle {
-                width: parent.width
-                height: parent.height
+                anchors.fill: parent
                 radius: 10
                 color: Theme.get.backgroundColor
             }
