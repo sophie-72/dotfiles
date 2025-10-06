@@ -33,9 +33,20 @@ Scope {
             }
 
             ColumnLayout {
+                anchors.top: parent.top
+                anchors.horizontalCenter: parent.horizontalCenter
+
+                Workspaces {}
+            }
+
+            ColumnLayout {
                 anchors.bottom: parent.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
-                                
+
+                Volume {
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
                 BatteryWidget {
                     Layout.alignment: Qt.AlignHCenter
                 }
