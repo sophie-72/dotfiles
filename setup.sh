@@ -10,7 +10,7 @@ if ! pacman -Qi paru > /dev/null; then
 fi
 
 echo -e "\nInstalling required packages"
-paru -S --needed curl zsh helix nodejs npm papirus-icon-theme sddm hyprland hyprpaper hypridle hyprlock xdg-desktop-portal-hyprland hyprpolkitagent udiskie waybar rofi-wayland rofi-power-menu dunst kitty qt5-base qt5-graphicaleffects qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 otf-font-awesome grim slurp wl-clipboard
+paru -S --needed curl zsh helix nodejs npm papirus-icon-theme sddm hyprland hyprpaper hypridle hyprlock xdg-desktop-portal-hyprland hyprpolkitagent udiskie waybar rofi-wayland rofi-power-menu dunst kitty qt5-base qt5-graphicaleffects qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 otf-font-awesome grim slurp wl-clipboard zen-browser-bin
 
 echo -e "\nInstalling oh-my-zsh and plugins"
 echo "IMPORTANT: Type 'exit' after the Oh My Zsh installation to allow this script to continue."
