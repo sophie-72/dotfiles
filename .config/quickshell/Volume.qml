@@ -102,100 +102,73 @@ Item {
         }
     }
 
-    width: iconSize + maxPillWidth - pillOverlap
-    height: pillHeight * 3
+    width: iconSize
+    height: pillHeight
 
-    Column {
-        anchors.fill: parent
-        anchors.horizontalCenter: parent.horizontalCenter
+    Rectangle {
+        id: iconCircle
+        width: item.iconSize
+        height: item.iconSize
+        radius: width / 2
+        color: Theme.get.goldColor
+        smooth: true
 
-        Rectangle {
-            id: iconCircle
-            width: item.iconSize
-            height: item.iconSize
-            radius: width / 2
-            color: Theme.get.goldColor
-            smooth: true
-
-            Behavior on color {
-                ColorAnimation {
-                    duration: 200
-                    easing.type: Easing.InOutQuad
-                }
-            }
-
-            Text {
-                id: icon
-                anchors.centerIn: iconCircle
-                font.family: "Material Symbols Outlined"
-                font.pixelSize: 14
-                color: Theme.get.backgroundColor
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-
-                text: {
-                    if (item.volumeMuted || item.volume === 0)
-                        return "";
-                    else if (item.volume > 0 && item.volume < 30)
-                        return "";
-                    else
-                        return "";
-                }
-            }
-
-            MouseArea {
-                anchors.fill: iconCircle
-                acceptedButtons: Qt.LeftButton | Qt.RightButton
-
-                Process {
-                    id: volumeControl
-
-                    running: false
-                    command: ["pavucontrol"]
-                }
-
-                onClicked: function (mouse) {
-                    if (mouse.button == Qt.LeftButton) {
-                        // Left click: toggle mute
-                        if (item.defaultAudioSink && item.defaultAudioSink.audio) {
-                            item.defaultAudioSink.audio.muted = !item.defaultAudioSink.audio.muted;
-                        }
-                    } else if (mouse.button == Qt.RightButton && !volumeControl.running) {
-                        // Right click: open system volume control
-                        volumeControl.running = true;
-                    }
-                }
-
-                onWheel: function (wheel) {
-                    // Scroll wheel: adjust volume
-                    if (item.defaultAudioSink && item.defaultAudioSink.audio) {
-                        var delta = wheel.angleDelta.y > 0 ? 0.05 : -0.05; // 5% steps
-                        var newVolume = Math.max(0, Math.min(1, item.defaultAudioSink.audio.volume + delta));
-                        item.defaultAudioSink.audio.volume = newVolume;
-                    }
-                }
+        Behavior on color {
+            ColorAnimation {
+                duration: 200
+                easing.type: Easing.InOutQuad
             }
         }
 
-        Rectangle {
-            id: percentageContainer
-            topLeftRadius: item.pillHeight / 2
-            bottomLeftRadius: item.pillHeight / 2
-            color: Theme.get.pineColor
-            height: item.pillHeight
-            width: 50
-            opacity: 1
+        Text {
+            id: icon
+            anchors.centerIn: iconCircle
+            font.family: "Material Symbols Outlined"
+            font.pixelSize: 14
+            color: Theme.get.backgroundColor
+            verticalAlignment: Text.AlignVCenter
+            horizontalAlignment: Text.AlignHCenter
 
-            Text {
-                id: percentageText
-                anchors.centerIn: parent
-                text: item.volume + "%"
-                font.pixelSize: 14
-                font.weight: Font.Bold
-                color: Theme.get.textColor
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-                clip: true
+            text: {
+                if (item.volumeMuted || item.volume === 0)
+                    return "";
+                else if (item.volume > 0 && item.volume < 30)
+                    return "";
+                else
+                    return "";
+            }
+        }
+
+        MouseArea {
+            anchors.fill: iconCircle
+            acceptedButtons: Qt.LeftButton | Qt.RightButton
+
+            Process {
+                id: volumeControl
+
+                running: false
+                command: ["pavucontrol"]
+            }
+
+            onClicked: function (mouse) {
+                if (mouse.button == Qt.LeftButton) {
+                    // Left click: toggle mute
+                    if (item.defaultAudioSink && item.defaultAudioSink.audio) {
+                        item.defaultAudioSink.audio.muted = !item.defaultAudioSink.audio.muted;
+                    }
+                } else if (mouse.button == Qt.RightButton && !volumeControl.running) {
+                    // Right click: open system volume control
+                    volumeControl.running = true;
+                }
+            }
+
+            onWheel: function (wheel) {
+                // Scroll wheel: adjust volume
+                if (item.defaultAudioSink && item.defaultAudioSink.audio) {
+                    var delta = wheel.angleDelta.y > 0 ? 0.05 : -0.05; // 5% steps
+                    var newVolume = Math.max(0, Math.min(1, item.defaultAudioSink.audio.volume + delta));
+                    item.defaultAudioSink.audio.volume = newVolume;
+                }
             }
         }
     }
