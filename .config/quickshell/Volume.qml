@@ -1,6 +1,9 @@
+import QtQuick
+import QtQuick.Layouts
+import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Io
-import QtQuick
+import Quickshell.Widgets
 
 Item {
     id: item
@@ -16,22 +19,92 @@ Item {
 
     property int maxPillWidth: 0
     property bool showPercentage: false
+    property bool shouldShowOsd: false
 
     PwObjectTracker {
         objects: [Pipewire.defaultAudioSink]
     }
 
+    Connections {
+        target: Pipewire.defaultAudioSink?.audio
+
+        function onVolumeChanged() {
+            item.shouldShowOsd = true;
+            hideTimer.restart();
+        }
+    }
+
+    Timer {
+        id: hideTimer
+        interval: 1000
+        onTriggered: item.shouldShowOsd = false
+    }
+
+    LazyLoader {
+        active: item.shouldShowOsd
+
+        PanelWindow {
+            anchors.bottom: true
+            margins.bottom: Screen.height / 5
+            exclusiveZone: 0
+
+            implicitWidth: 400
+            implicitHeight: 50
+            color: "transparent"
+
+            mask: Region {}
+
+            Rectangle {
+                anchors.fill: parent
+                radius: height / 2
+                color: "#80000000"
+
+                RowLayout {
+                    anchors {
+                        fill: parent
+                        leftMargin: 10
+                        rightMargin: 15
+                    }
+
+                    IconImage {
+                        implicitSize: 30
+                        source: Quickshell.iconPath("audio-volume-high-symbolic")
+                    }
+
+                    Rectangle {
+                        Layout.fillWidth: true
+
+                        implicitHeight: 10
+                        radius: 20
+                        color: "#50ffffff"
+
+                        Rectangle {
+                            anchors {
+                                left: parent.left
+                                top: parent.top
+                                bottom: parent.bottom
+                            }
+
+                            implicitWidth: parent.width * (Pipewire.defaultAudioSink?.audio.volume ?? 0)
+                            radius: parent.radius
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     width: Math.max(iconSize, showPercentage ? iconSize + maxPillWidth - pillOverlap : iconSize)
     height: pillHeight
 
-    onVolumeChanged: {
+    /*onVolumeChanged: {
         if (!showPercentage) {
             showPercentage = true;
             showHideAnimation.start();
         } else {
             showHideAnimation.restart();
         }
-    }
+    }*/
 
     Component.onCompleted: {
         maxPillWidth = percentageText.implicitWidth + pillPaddingHorizontal * 2 + pillOverlap;
