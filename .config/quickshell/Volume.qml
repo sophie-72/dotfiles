@@ -1,4 +1,5 @@
 import Quickshell.Services.Pipewire
+import Quickshell.Io
 import QtQuick
 
 Item {
@@ -45,7 +46,7 @@ Item {
             id: percentageContainer
             topLeftRadius: item.pillHeight / 2
             bottomLeftRadius: item.pillHeight / 2
-            color: Theme.get.foamColor
+            color: Theme.get.pineColor
             height: item.pillHeight
             width: 0
             anchors.verticalCenter: parent.verticalCenter
@@ -109,22 +110,29 @@ Item {
             anchors.fill: iconCircle
             acceptedButtons: Qt.LeftButton | Qt.RightButton
 
+            Process {
+                id: volumeControl
+
+                running: false
+                command: ["pavucontrol"]
+            }
+
             onClicked: function (mouse) {
                 if (mouse.button == Qt.LeftButton) {
                     // Left click: toggle mute
                     if (item.defaultAudioSink && item.defaultAudioSink.audio) {
                         item.defaultAudioSink.audio.muted = !item.defaultAudioSink.audio.muted;
                     }
-                } else if (mouse.button === Qt.RightButton) {
+                } else if (mouse.button == Qt.RightButton && !volumeControl.running) {
                     // Right click: open system volume control
-                    Qt.openUrlExternally("pavucontrol");
+                    volumeControl.running = true;
                 }
             }
 
             onWheel: function (wheel) {
                 // Scroll wheel: adjust volume
                 if (item.defaultAudioSink && item.defaultAudioSink.audio) {
-                    var delta = wheel.angleDelta.y > 0 ? 0.05 : 0.05; // 5% steps
+                    var delta = wheel.angleDelta.y > 0 ? 0.05 : -0.05; // 5% steps
                     var newVolume = Math.max(0, Math.min(1, item.defaultAudioSink.audio.volume + delta));
                     item.defaultAudioSink.audio.volume = newVolume;
                 }
