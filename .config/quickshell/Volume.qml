@@ -18,7 +18,6 @@ Item {
     readonly property int pillOverlap: iconSize / 2
 
     property int maxPillWidth: 0
-    property bool showPercentage: true
     property bool shouldShowOsd: false
 
     PwObjectTracker {
@@ -94,7 +93,7 @@ Item {
         }
     }
 
-    width: Math.max(iconSize, showPercentage ? iconSize + maxPillWidth - pillOverlap : iconSize)
+    width: iconSize + maxPillWidth - pillOverlap
     height: pillHeight * 3
 
     Column {
@@ -106,7 +105,7 @@ Item {
             width: item.iconSize
             height: item.iconSize
             radius: width / 2
-            color: item.showPercentage ? Theme.get.goldColor : "transparent"
+            color: Theme.get.goldColor
             smooth: true
 
             Behavior on color {
@@ -121,7 +120,7 @@ Item {
                 anchors.centerIn: iconCircle
                 font.family: "Material Symbols Outlined"
                 font.pixelSize: 14
-                color: item.showPercentage ? Theme.get.backgroundColor : Theme.get.textColor
+                color: Theme.get.backgroundColor
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
 
@@ -177,7 +176,6 @@ Item {
             height: item.pillHeight
             width: 50
             opacity: 1
-            visible: item.showPercentage
 
             Text {
                 id: percentageText
