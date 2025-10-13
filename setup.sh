@@ -10,7 +10,44 @@ if ! pacman -Qi paru > /dev/null; then
 fi
 
 echo -e "\nInstalling required packages"
-paru -S --needed curl zsh helix nodejs npm papirus-icon-theme sddm hyprland hyprpaper hypridle hyprlock xdg-desktop-portal-hyprland hyprpolkitagent udiskie waybar rofi-wayland rofi-power-menu dunst kitty qt5-base qt5-graphicaleffects qt5-quick3d qt5-quickcontrols qt5-quickcontrols2 otf-font-awesome grim slurp wl-clipboard zen-browser-bin
+paru -S --needed \
+    curl \
+    zsh \
+    helix \
+    openssh \
+    nodejs \
+    npm \
+    papirus-icon-theme \
+    sddm \
+    hyprland \
+    hyprpaper \
+    hypridle \
+    hyprlock \
+    xdg-desktop-portal-hyprland \
+    hyprpolkitagent \
+    udiskie \
+    waybar \
+    rofi \
+    rofi-power-menu \
+    dunst \
+    kitty \
+    qt5-base \
+    qt5-graphicaleffects \
+    qt5-quick3d \
+    qt5-quickcontrols \
+    qt5-quickcontrols2 \
+    otf-font-awesome \
+    grim \
+    slurp \
+    wl-clipboard \
+    zen-browser-bin \
+    bluez \
+    bluez-utils \
+    pipewire \
+    pipewire-pulse \
+    pipewire-alsa \
+    pipewire-audio \
+    pavucontrol
 
 echo -e "\nInstalling oh-my-zsh and plugins"
 echo "IMPORTANT: Type 'exit' after the Oh My Zsh installation to allow this script to continue."
@@ -32,3 +69,9 @@ sudo cp .config/sddm/theme.conf.user /usr/share/sddm/themes/sddm-rose-pine/
 sudo cp .config/sddm/blockwavemoon.png /usr/share/sddm/themes/sddm-rose-pine/
 sudo systemctl enable sddm
 
+echo -e "\nStarting and enabling bluetooth"
+sudo systemctl start bluetooth
+sudo systemctl enable bluetooth
+
+echo -e "\nEnabling pipewire"
+systemctl --user enable --now pipewire pipewire-pulse wireplumber
