@@ -88,6 +88,15 @@ Item {
                             radius: parent.radius
                         }
                     }
+
+                    Text {
+                        text: item.volume + "%"
+                        font.pixelSize: 14
+                        font.weight: Font.Bold
+                        color: Theme.get.textColor
+                        verticalAlignment: Text.AlignVCenter
+                        horizontalAlignment: Text.AlignHCenter
+                    }
                 }
             }
         }
