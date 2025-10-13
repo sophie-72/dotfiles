@@ -9,7 +9,7 @@ Item {
     id: item
 
     property var defaultAudioSink: Pipewire.defaultAudioSink
-    property int volume: defaultAudioSink && defaultAudioSink.audio ? Math.round(defaultAudioSink.audio.volume) * 100 : 0
+    property int volume: defaultAudioSink && defaultAudioSink.audio ? Math.round(defaultAudioSink.audio.volume * 100) : 0
     property bool volumeMuted: defaultAudioSink && defaultAudioSink.audio ? defaultAudioSink.audio.muted : false
 
     readonly property int iconSize: 22
