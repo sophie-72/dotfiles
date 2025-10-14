@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import Qt5Compat.GraphicalEffects
 import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Io
@@ -65,9 +66,34 @@ Item {
                         rightMargin: 15
                     }
 
-                    IconImage {
-                        implicitSize: 30
-                        source: Quickshell.iconPath("audio-volume-high-symbolic")
+                    Item {
+                        id: volumeIcon
+                        width: 30
+                        height: 30
+
+                        property string iconsFolder: Qt.resolvedUrl(Quickshell.shellPath("assets/icons/"))
+
+                        IconImage {
+                            id: volumeIconImage
+                            implicitSize: 30
+                            source: {
+                                if (item.volume > 50) {
+                                    return parent.iconsFolder + "volume-high.svg";
+                                } else if (item.volume > 0) {
+                                    return parent.iconsFolder + "volume-low.svg";
+                                } else {
+                                    return parent.iconsFolder + "volume-off.svg";
+                                }
+                            }
+                        }
+
+                        Loader {
+                            anchors.fill: volumeIconImage
+                            sourceComponent: ColorOverlay {
+                                source: volumeIconImage
+                                color: Theme.get.pineColor
+                            }
+                        }
                     }
 
                     Rectangle {
