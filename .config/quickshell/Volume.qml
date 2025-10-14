@@ -45,7 +45,7 @@ Item {
 
         PanelWindow {
             anchors.bottom: true
-            margins.bottom: Screen.height / 5
+            margins.bottom: Screen.height / 15
             exclusiveZone: 0
 
             implicitWidth: 400
@@ -57,7 +57,7 @@ Item {
             Rectangle {
                 anchors.fill: parent
                 radius: height / 2
-                color: "#80000000"
+                color:Theme.get.overlayColor
 
                 RowLayout {
                     anchors {
@@ -77,7 +77,7 @@ Item {
 
                         implicitHeight: 10
                         radius: 20
-                        color: "#50ffffff"
+                        color: Theme.get.subtleColor
 
                         Rectangle {
                             anchors {
