@@ -5,15 +5,19 @@ import Quickshell.Widgets
 
 Item {
     id: volumeIcon
-    width: 30
-    height: 30
 
+    property string color
+    property int size
     property int volume
     property string iconsFolder: Qt.resolvedUrl(Quickshell.shellPath("assets/icons/"))
 
+    width: size
+    height: size
+
     IconImage {
         id: volumeIconImage
-        implicitSize: 30
+        anchors.fill: parent
+        implicitSize: parent.size
         source: {
             if (parent.volume > 50) {
                 return parent.iconsFolder + "volume-high.svg";
@@ -29,7 +33,7 @@ Item {
         anchors.fill: volumeIconImage
         sourceComponent: ColorOverlay {
             source: volumeIconImage
-            color: Theme.get.pineColor
+            color: volumeIcon.color
         }
     }
 }

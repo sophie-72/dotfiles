@@ -67,9 +67,11 @@ Item {
                     }
 
                     VolumeIcon {
+                        color: Theme.get.pineColor
+                        size: 30
                         volume: item.volume
                     }
-                    
+
                     Rectangle {
                         Layout.fillWidth: true
 
@@ -113,30 +115,11 @@ Item {
         color: Theme.get.goldColor
         smooth: true
 
-        Behavior on color {
-            ColorAnimation {
-                duration: 200
-                easing.type: Easing.InOutQuad
-            }
-        }
-
-        Text {
-            id: icon
-            anchors.centerIn: iconCircle
-            font.family: "Material Symbols Outlined"
-            font.pixelSize: 14
+        VolumeIcon {
             color: Theme.get.backgroundColor
-            verticalAlignment: Text.AlignVCenter
-            horizontalAlignment: Text.AlignHCenter
-
-            text: {
-                if (item.volumeMuted || item.volume === 0)
-                    return "";
-                else if (item.volume > 0 && item.volume < 30)
-                    return "";
-                else
-                    return "";
-            }
+            size: 14
+            volume: item.volume
+            anchors.centerIn: parent
         }
 
         MouseArea {
