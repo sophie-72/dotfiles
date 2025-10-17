@@ -11,6 +11,9 @@ Singleton {
         id: rosePineMoon
 
         property string backgroundColor: "#232136"
+        property string overlayColor: "#393552"
+        property string mutedColor: "#6e6a86"
+        property string subtleColor: "#908caa"
         property string textColor: "#e0def4"
         property string loveColor: "#eb6f92"
         property string goldColor: "#f6c177"
