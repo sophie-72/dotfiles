@@ -110,13 +110,11 @@ Item {
         id: iconCircle
         width: item.iconSize
         height: item.iconSize
-        radius: width / 2
-        color: Theme.get.goldColor
-        smooth: true
+        color: "transparent"
 
         VolumeIcon {
-            color: Theme.get.backgroundColor
-            size: 14
+            color: Theme.get.goldColor
+            size: 24
             volume: item.volume
             isVolumeMuted: item.volumeMuted
             anchors.centerIn: parent
