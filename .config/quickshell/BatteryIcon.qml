@@ -1,7 +1,6 @@
 import Qt5Compat.GraphicalEffects
 import QtQuick
 import Quickshell
-import Quickshell.Services.UPower
 import Quickshell.Widgets
 
 Item {
@@ -9,9 +8,8 @@ Item {
     
     property string color
     property int size
+    property real percentage
     property string iconsFolder: Qt.resolvedUrl(Quickshell.shellPath("assets/icons/"))
-    readonly property UPowerDevice device: UPower.displayDevice
-    readonly property real percentage: UPower.displayDevice.percentage
 
     width: size
     height: size
