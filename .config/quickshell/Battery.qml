@@ -16,26 +16,24 @@ Item {
     Rectangle {
         width: widget.backgroundSize
         height: parent.height
-        radius: 6
-        color: Theme.get.pineColor
-        smooth: true
+        color: "transparent"
 
         ColumnLayout {
             spacing: 1
             anchors.fill: parent
             
             BatteryIcon {
-                color: Theme.get.backgroundColor
-                size: 18
+                color: Theme.get.pineColor
+                size: 24
                 percentage: widget.percentage
                 Layout.alignment: Qt.AlignCenter
             }
 
             Text {
-                text: (widget.percentage * 100)
+                text: (widget.percentage * 100) + "%"
                 font.pixelSize: 14
                 font.weight: Font.Bold
-                color: Theme.get.backgroundColor
+                color: Theme.get.pineColor
                 verticalAlignment: Text.AlignVCenter
                 horizontalAlignment: Text.AlignHCenter
                 Layout.alignment: Qt.AlignCenter
