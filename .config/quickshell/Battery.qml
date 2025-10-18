@@ -1,11 +1,24 @@
-pragma Singleton
-
 import QtQuick
-import Quickshell
-import Quickshell.Services.UPower
 
-Singleton {
-    readonly property UPowerDevice device: UPower.displayDevice
-    readonly property real percentage: UPower.displayDevice.percentage
-    readonly property string icon: percentage == 1 ? "" : percentage >= 0.75 ? "" : percentage >= 0.50 ? "" : percentage >= 0.25 ? "" : ""
+Item {
+    id: widget
+    
+    property int backgroundSize: 26
+    
+    width: backgroundSize
+    height: backgroundSize
+    
+    Rectangle {
+        width: widget.backgroundSize
+        height: widget.backgroundSize
+        radius: 6
+        color: Theme.get.pineColor
+        smooth: true
+
+        BatteryIcon {
+            color: Theme.get.backgroundColor
+            size: 18
+            anchors.centerIn: parent
+        }
+    }
 }

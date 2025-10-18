@@ -47,7 +47,7 @@ Scope {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
-                BatteryWidget {
+                Battery {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
