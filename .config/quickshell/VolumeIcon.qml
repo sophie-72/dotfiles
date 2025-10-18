@@ -9,6 +9,7 @@ Item {
     property string color
     property int size
     property int volume
+    property bool isVolumeMuted
     property string iconsFolder: Qt.resolvedUrl(Quickshell.shellPath("assets/icons/"))
 
     width: size
@@ -19,7 +20,9 @@ Item {
         anchors.fill: parent
         implicitSize: parent.size
         source: {
-            if (parent.volume > 50) {
+            if (parent.isVolumeMuted) {
+                return parent.iconsFolder + "volume-xmark.svg";
+            } else if (parent.volume > 50) {
                 return parent.iconsFolder + "volume-high.svg";
             } else if (parent.volume > 0) {
                 return parent.iconsFolder + "volume-low.svg";

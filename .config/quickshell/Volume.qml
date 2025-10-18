@@ -68,6 +68,7 @@ Item {
                         color: Theme.get.pineColor
                         size: 30
                         volume: item.volume
+                        isVolumeMuted: item.volumeMuted
                     }
 
                     Rectangle {
@@ -117,6 +118,7 @@ Item {
             color: Theme.get.backgroundColor
             size: 14
             volume: item.volume
+            isVolumeMuted: item.volumeMuted
             anchors.centerIn: parent
         }
 
