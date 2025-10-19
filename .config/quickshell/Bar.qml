@@ -50,6 +50,10 @@ Scope {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
+                SystemUsage {
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
                 Battery {
                     Layout.alignment: Qt.AlignHCenter
                 }

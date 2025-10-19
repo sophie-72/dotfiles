@@ -41,6 +41,11 @@ Item {
         }
     }
 
+    BatteryPopup {
+        id: batteryPopup
+        device: batteryWidget.device
+    }
+
     MouseArea {
         anchors.fill: batteryWidget
         hoverEnabled: true
@@ -50,10 +55,5 @@ Item {
         onExited: () => {
             batteryPopup.visible = false;
         }
-    }
-
-    BatteryPopup {
-        id: batteryPopup
-        device: batteryWidget.device
     }
 }
