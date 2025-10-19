@@ -25,7 +25,7 @@ Item {
         anchors.fill: workspaceIconImage
         sourceComponent: ColorOverlay {
             source: workspaceIconImage
-            color: (workspaceIcon.isFocused || workspaceIcon.isActive) ? Theme.get.pineColor : Theme.get.overlayColor
+            color: (workspaceIcon.isFocused || workspaceIcon.isActive) ? Theme.get.pineColor : Theme.get.mutedColor
         }
     }
 }
