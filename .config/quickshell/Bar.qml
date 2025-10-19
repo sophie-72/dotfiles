@@ -58,6 +58,10 @@ Scope {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
+                Keyboard {
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
                 ClockWidget {
                     Layout.alignment: Qt.AlignHCenter
                 }
