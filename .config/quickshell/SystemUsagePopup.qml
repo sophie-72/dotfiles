@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Io
 
 PopupWindow {
     id: systemUsagePopup
@@ -9,7 +8,7 @@ PopupWindow {
     anchor.item: systemUsageWidget
     anchor.rect.x: systemUsageWidget.x + 40
     implicitWidth: 250
-    implicitHeight: 200
+    implicitHeight: 275
     visible: false
     color: "transparent"
 
@@ -42,6 +41,12 @@ PopupWindow {
 
                     return output;
                 }
+                font.weight: Font.Bold
+                color: Theme.get.textColor
+            }
+
+            Text {
+                text: "CPU usage: " + CpuUsage.utilizationPercentage + "%"
                 font.weight: Font.Bold
                 color: Theme.get.textColor
             }
