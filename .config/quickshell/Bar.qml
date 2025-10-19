@@ -30,7 +30,7 @@ Scope {
             Rectangle {
                 anchors.fill: parent
                 radius: 10
-                color: Theme.get.backgroundColor
+                color: Theme.get.transparentBackgroundColor
             }
 
             ColumnLayout {
