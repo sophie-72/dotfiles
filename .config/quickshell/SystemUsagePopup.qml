@@ -22,6 +22,12 @@ PopupWindow {
             anchors.leftMargin: 10
 
             Text {
+                text: "CPU usage: " + CpuUsage.utilizationPercentage + "%"
+                font.weight: Font.Bold
+                color: Theme.get.textColor
+            }
+
+            Text {
                 text: "RAM usage: " + MemoryUsage.usedMemory + "/" + MemoryUsage.totalMemory
                 font.weight: Font.Bold
                 color: Theme.get.textColor
@@ -33,20 +39,12 @@ PopupWindow {
                     let output = "Storage usage:";
 
                     for (const device of devices) {
-                        const data = " ".repeat(4) + device.device + " (" + device.mountedOn + "): " + device.size + "\n"
-                        + " ".repeat(8) + "Used: " + device.used + "\n"
-                        + " ".repeat(8) + "Available: " + device.available;
+                        const data = " ".repeat(4) + device.device + " (" + device.mountedOn + "): " + device.size + "\n" + " ".repeat(8) + "Used: " + device.used + "\n" + " ".repeat(8) + "Available: " + device.available;
                         output += "\n" + data;
                     }
 
                     return output;
                 }
-                font.weight: Font.Bold
-                color: Theme.get.textColor
-            }
-
-            Text {
-                text: "CPU usage: " + CpuUsage.utilizationPercentage + "%"
                 font.weight: Font.Bold
                 color: Theme.get.textColor
             }
