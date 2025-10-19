@@ -19,7 +19,7 @@ PopupWindow {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.get.backgroundColor
+        color: Theme.get.transparentBackgroundColor
         radius: 10
 
         ColumnLayout {
