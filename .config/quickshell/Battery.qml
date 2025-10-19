@@ -31,7 +31,7 @@ Item {
 
             Text {
                 text: (widget.percentage * 100) + "%"
-                font.pixelSize: 14
+                font.pixelSize: 10
                 font.weight: Font.Bold
                 color: Theme.get.pineColor
                 verticalAlignment: Text.AlignVCenter
