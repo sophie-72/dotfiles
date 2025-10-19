@@ -55,7 +55,7 @@ Item {
             Rectangle {
                 anchors.fill: parent
                 radius: height / 2
-                color:Theme.get.transparentBackgroundColor
+                color: Theme.get.transparentBackgroundColor
 
                 RowLayout {
                     anchors {
