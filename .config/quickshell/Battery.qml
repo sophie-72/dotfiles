@@ -54,5 +54,6 @@ Item {
 
     BatteryPopup {
         id: batteryPopup
+        device: batteryWidget.device
     }
 }
