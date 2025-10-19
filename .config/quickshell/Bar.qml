@@ -36,6 +36,7 @@ Scope {
             ColumnLayout {
                 anchors.top: parent.top
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.topMargin: 5
 
                 Workspaces {}
             }
@@ -43,6 +44,7 @@ Scope {
             ColumnLayout {
                 anchors.bottom: parent.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
+                anchors.bottomMargin: 5
 
                 Volume {
                     Layout.alignment: Qt.AlignHCenter
