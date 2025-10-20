@@ -6,13 +6,13 @@ import Quickshell
 
 Singleton {
     id: root
-    
+
     property bool visible
-    
+
     PanelWindow {
         focusable: true
         implicitWidth: 400
-        implicitHeight: 300
+        implicitHeight: 110
         visible: root.visible
         color: "transparent"
 
@@ -22,11 +22,48 @@ Singleton {
             color: Theme.get.transparentBackgroundColor
             radius: 10
 
-            ColumnLayout {
+            RowLayout {
                 anchors.fill: parent
+                anchors.horizontalCenter: parent.horizontalCenter
+                anchors.topMargin: 5
+                anchors.bottomMargin: 5
+                anchors.leftMargin: 5
+                anchors.rightMargin: 5
 
-                Text {
-                    text: "test :D"
+                Rectangle {
+                    implicitWidth: 100
+                    implicitHeight: 100
+                    color: Theme.get.mutedColor
+
+                    PowerIcon {
+                        color: Theme.get.loveColor
+                        size: 24
+                        Layout.alignment: Qt.AlignCenter
+                    }
+                }
+
+                Rectangle {
+                    implicitWidth: 100
+                    implicitHeight: 100
+                    color: Theme.get.mutedColor
+
+                    RebootIcon {
+                        color: Theme.get.roseColor
+                        size: 24
+                        Layout.alignment: Qt.AlignCenter
+                    }
+                }
+
+                Rectangle {
+                    implicitWidth: 100
+                    implicitHeight: 100
+                    color: Theme.get.mutedColor
+
+                    LockIcon {
+                        color: Theme.get.goldColor
+                        size: 24
+                        Layout.alignment: Qt.AlignCenter
+                    }
                 }
             }
 
