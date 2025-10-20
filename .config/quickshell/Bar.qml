@@ -69,6 +69,10 @@ Scope {
                 ClockWidget {
                     Layout.alignment: Qt.AlignHCenter
                 }
+
+                Power {
+                    Layout.alignment: Qt.AlignHCenter
+                }
             }
         }
     }
