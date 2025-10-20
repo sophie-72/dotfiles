@@ -46,6 +46,10 @@ Scope {
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottomMargin: 5
 
+                Updates {
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
                 Volume {
                     Layout.alignment: Qt.AlignHCenter
                 }
