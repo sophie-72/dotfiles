@@ -1,5 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
+import Quickshell
+import Quickshell.Io
 
 Item {
     property int backgroundSize: 26
@@ -8,6 +10,7 @@ Item {
     height: backgroundSize * 2
 
     Rectangle {
+        id: updates
         width: parent.width
         height: parent.height
         color: "transparent"
@@ -25,6 +28,19 @@ Item {
                 color: Theme.get.textColor
                 Layout.alignment: Qt.AlignCenter
             }
+        }
+
+        Process {
+            id: update
+            running: false
+            command: ["sh", "-c", "kitty --hold sh -c 'paru -Syu'"]
+        }
+
+        MouseArea {
+            anchors.fill: updates
+            acceptedButtons: Qt.LeftButton
+
+            onClicked: update.startDetached()
         }
     }
 }
