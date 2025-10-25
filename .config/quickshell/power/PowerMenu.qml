@@ -3,6 +3,7 @@ pragma Singleton
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import qs
 
 Singleton {
     id: root
