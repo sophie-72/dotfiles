@@ -1,5 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
+import Quickshell.Io
 import qs
 
 Rectangle {
@@ -18,5 +19,18 @@ Rectangle {
         size: parent.iconSize
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
+    }
+
+    MouseArea {
+        anchors.fill: parent
+
+        Process {
+            id: powerOffProcess
+
+            running: false
+            command: ["systemctl", "poweroff"]
+        }
+
+        onClicked: powerOffProcess.running = true
     }
 }
