@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import qs.battery
 import qs.clock
 import qs.keyboard
+import qs.workspaces
 
 Scope {
     Variants {
