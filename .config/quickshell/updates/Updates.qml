@@ -1,7 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
-import Quickshell
 import Quickshell.Io
+import qs
 
 Item {
     property int backgroundSize: 26
