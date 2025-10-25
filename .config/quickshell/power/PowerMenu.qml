@@ -35,49 +35,22 @@ Singleton {
                 anchors.leftMargin: root.margin
                 anchors.rightMargin: root.margin
 
-                Rectangle {
-                    implicitWidth: root.itemSize
-                    implicitHeight: root.itemSize
-                    color: Theme.get.loveColor
-                    radius: root.radius
-                    Layout.alignment: Qt.AlignHCenter
-
-                    PowerIcon {
-                        color: Theme.get.backgroundColor
-                        size: root.iconSize
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                    }
+                PowerButton {
+                    buttonSize: root.itemSize
+                    buttonRadius: root.radius
+                    iconSize: root.iconSize
                 }
 
-                Rectangle {
-                    implicitWidth: root.itemSize
-                    implicitHeight: root.itemSize
-                    color: Theme.get.roseColor
-                    radius: root.radius
-                    Layout.alignment: Qt.AlignHCenter
-
-                    RebootIcon {
-                        color: Theme.get.backgroundColor
-                        size: root.iconSize
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                    }
+                RebootButton {
+                    buttonSize: root.itemSize
+                    buttonRadius: root.radius
+                    iconSize: root.iconSize
                 }
 
-                Rectangle {
-                    implicitWidth: root.itemSize
-                    implicitHeight: root.itemSize
-                    color: Theme.get.goldColor
-                    radius: root.radius
-                    Layout.alignment: Qt.AlignHCenter
-
-                    LockIcon {
-                        color: Theme.get.backgroundColor
-                        size: root.iconSize
-                        anchors.verticalCenter: parent.verticalCenter
-                        anchors.horizontalCenter: parent.horizontalCenter
-                    }
+                LockButton {
+                    buttonSize: root.itemSize
+                    buttonRadius: root.radius
+                    iconSize: root.iconSize
                 }
             }
 
