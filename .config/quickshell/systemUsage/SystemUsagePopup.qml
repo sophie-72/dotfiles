@@ -1,6 +1,7 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
+import qs
 
 PopupWindow {
     id: systemUsagePopup
