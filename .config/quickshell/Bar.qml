@@ -4,6 +4,7 @@ import QtQuick.Layouts
 import qs.battery
 import qs.clock
 import qs.keyboard
+import qs.power
 import qs.systemUsage
 import qs.updates
 import qs.volume
