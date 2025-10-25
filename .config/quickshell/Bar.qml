@@ -6,6 +6,7 @@ import qs.clock
 import qs.keyboard
 import qs.systemUsage
 import qs.updates
+import qs.volume
 import qs.workspaces
 
 Scope {
