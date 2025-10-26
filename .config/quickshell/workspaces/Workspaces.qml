@@ -1,5 +1,6 @@
 import Quickshell.Hyprland
 import QtQuick
+import qs
 
 Repeater {
     model: Hyprland.workspaces
@@ -14,10 +15,10 @@ Repeater {
             onClicked: modelData.activate()
         }
 
-        WorkspaceIcon {
+        Icon {
+            color: (modelData.focused || modelData.active) ? Theme.get.pineColor : Theme.get.mutedColor
             size: 18
-            isFocused: modelData.focused
-            isActive: modelData.active
+            iconName:  modelData.focused ? "circle-dot" : "circle"
             anchors.centerIn: parent
         }
     }

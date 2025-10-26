@@ -15,9 +15,10 @@ Item {
         height: parent.height
         color: "transparent"
 
-        PowerIcon {
+        Icon {
             color: Theme.get.loveColor
             size: 24
+            iconName: "power-off"
             Layout.alignment: Qt.AlignCenter
         }
     }

@@ -14,9 +14,10 @@ Rectangle {
     radius: buttonRadius
     Layout.alignment: Qt.AlignHCenter
 
-    PowerIcon {
+    Icon {
         color: Theme.get.backgroundColor
         size: parent.iconSize
+        iconName: "power-off"
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
     }

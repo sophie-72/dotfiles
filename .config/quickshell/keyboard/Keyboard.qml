@@ -18,9 +18,10 @@ Item {
         ColumnLayout {
             spacing: 0
 
-            KeyboardIcon {
+            Icon {
                 color: Theme.get.goldColor
                 size: 24
+                iconName: "keyboard"
                 Layout.alignment: Qt.AlignCenter
             }
 

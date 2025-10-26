@@ -84,11 +84,20 @@ Item {
                         rightMargin: 15
                     }
 
-                    VolumeIcon {
+                    Icon {
                         color: Theme.get.pineColor
                         size: 30
-                        volume: item.volume
-                        isVolumeMuted: item.volumeMuted
+                        iconName: {
+                            if (item.volumeMuted) {
+                                return "volume-xmark";
+                            } else if (item.volume > 50) {
+                                return "volume-high";
+                            } else if (item.volume > 0) {
+                                return "volume-low";
+                            } else {
+                                return "volume-off";
+                            }
+                        }
                     }
 
                     Rectangle {
@@ -132,11 +141,20 @@ Item {
         height: item.iconSize
         color: "transparent"
 
-        VolumeIcon {
+        Icon {
             color: Theme.get.goldColor
             size: 24
-            volume: item.volume
-            isVolumeMuted: item.volumeMuted
+            iconName: {
+                if (item.volumeMuted) {
+                    return "volume-xmark";
+                } else if (item.volume > 50) {
+                    return "volume-high";
+                } else if (item.volume > 0) {
+                    return "volume-low";
+                } else {
+                    return "volume-off";
+                }
+            }
             anchors.centerIn: parent
         }
 

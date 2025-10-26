@@ -14,9 +14,10 @@ Rectangle {
     radius: buttonRadius
     Layout.alignment: Qt.AlignHCenter
 
-    RebootIcon {
+    Icon {
         color: Theme.get.backgroundColor
         size: parent.iconSize
+        iconName: "arrows-rotate"
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
     }

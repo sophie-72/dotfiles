@@ -18,9 +18,10 @@ Item {
         ColumnLayout {
             spacing: 0
             
-            UpdatesIcon {
+            Icon {
                 color: Theme.get.goldColor
                 size: 24
+                iconName: "circle-up"
                 Layout.alignment: Qt.AlignCenter
             }
 

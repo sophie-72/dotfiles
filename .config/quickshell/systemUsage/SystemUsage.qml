@@ -14,9 +14,10 @@ Item {
         height: parent.height
         color: "transparent"
 
-        SystemUsageIcon {
+        Icon {
             color: Theme.get.goldColor
             size: 24
+            iconName: "gauge-high"
         }
     }
 

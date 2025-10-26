@@ -14,9 +14,11 @@ Rectangle {
     radius: buttonRadius
     Layout.alignment: Qt.AlignHCenter
 
-    LockIcon {
+
+    Icon {
         color: Theme.get.backgroundColor
         size: parent.iconSize
+        iconName: "lock"
         anchors.verticalCenter: parent.verticalCenter
         anchors.horizontalCenter: parent.horizontalCenter
     }

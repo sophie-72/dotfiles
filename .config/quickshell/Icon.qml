@@ -4,27 +4,28 @@ import Quickshell
 import Quickshell.Widgets
 
 Item {
-    id: systemUsageIcon
+    id: icon
 
     property string color
     property int size
+    property string iconName
     property string iconsFolder: Qt.resolvedUrl(Quickshell.shellPath("assets/icons/"))
 
     width: size
     height: size
 
     IconImage {
-        id: systemUsageIconImage
+        id: iconImage
         anchors.fill: parent
         implicitSize: parent.size
-        source: parent.iconsFolder + "gauge-high.svg"
+        source: parent.iconsFolder + parent.iconName + ".svg"
     }
 
     Loader {
-        anchors.fill: systemUsageIconImage
+        anchors.fill: iconImage
         sourceComponent: ColorOverlay {
-            source: systemUsageIconImage
-            color: systemUsageIcon.color
+            source: iconImage
+            color: icon.color
         }
     }
 }

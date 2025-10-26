@@ -19,10 +19,22 @@ Item {
         height: parent.height
         color: "transparent"
 
-        BatteryIcon {
+        Icon {
             color: Theme.get.goldColor
             size: 24
-            percentage: batteryWidget.percentage
+            iconName: {
+                if (batteryWidget.percentage == 1) {
+                    return "battery-full";
+                } else if (batteryWidget.percentage >= 0.75) {
+                    return "battery-three-quarters";
+                } else if (batteryWidget.percentage >= 0.50) {
+                    return "battery-half";
+                } else if (batteryWidget.percentage >= 0.25) {
+                    return "battery-quarter";
+                } else {
+                    return "battery-empty";
+                }
+            }
             Layout.alignment: Qt.AlignCenter
         }
     }
