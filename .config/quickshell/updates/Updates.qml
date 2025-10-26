@@ -16,8 +16,10 @@ Item {
         color: "transparent"
 
         ColumnLayout {
+            spacing: 0
+            
             UpdatesIcon {
-                color: Theme.get.pineColor
+                color: Theme.get.goldColor
                 size: 24
                 Layout.alignment: Qt.AlignCenter
             }
@@ -25,7 +27,7 @@ Item {
             Text {
                 text: UpdatesCount.count
                 font.weight: Font.Bold
-                color: Theme.get.textColor
+                color: Theme.get.goldColor
                 Layout.alignment: Qt.AlignCenter
             }
         }

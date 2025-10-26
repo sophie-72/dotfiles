@@ -50,6 +50,7 @@ Scope {
             }
 
             ColumnLayout {
+                spacing: 8
                 anchors.bottom: parent.bottom
                 anchors.horizontalCenter: parent.horizontalCenter
                 anchors.bottomMargin: 5

@@ -20,7 +20,7 @@ Item {
         color: "transparent"
 
         BatteryIcon {
-            color: Theme.get.pineColor
+            color: Theme.get.goldColor
             size: 24
             percentage: batteryWidget.percentage
             Layout.alignment: Qt.AlignCenter
