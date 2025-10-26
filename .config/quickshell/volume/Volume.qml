@@ -1,7 +1,5 @@
 import QtQuick
 import Quickshell.Services.Pipewire
-import Quickshell.Io
-import qs
 
 Item {
     id: item
@@ -40,50 +38,9 @@ Item {
         audioSink: item.defaultAudioSink
     }
 
-    Rectangle {
-        id: iconCircle
-        width: item.iconSize
-        height: item.iconSize
-        color: "transparent"
-
-        Icon {
-            color: Theme.get.goldColor
-            size: 24
-            iconName: item.iconName
-            anchors.centerIn: parent
-        }
-
-        MouseArea {
-            anchors.fill: iconCircle
-            acceptedButtons: Qt.LeftButton | Qt.RightButton
-
-            Process {
-                id: volumeControl
-
-                running: false
-                command: ["pavucontrol"]
-            }
-
-            onClicked: function (mouse) {
-                if (mouse.button == Qt.LeftButton) {
-                    // Left click: toggle mute
-                    if (item.defaultAudioSink && item.defaultAudioSink.audio) {
-                        item.defaultAudioSink.audio.muted = !item.defaultAudioSink.audio.muted;
-                    }
-                } else if (mouse.button == Qt.RightButton && !volumeControl.running) {
-                    // Right click: open system volume control
-                    volumeControl.running = true;
-                }
-            }
-
-            onWheel: function (wheel) {
-                // Scroll wheel: adjust volume
-                if (item.defaultAudioSink && item.defaultAudioSink.audio) {
-                    var delta = wheel.angleDelta.y > 0 ? 0.05 : -0.05; // 5% steps
-                    var newVolume = Math.max(0, Math.min(1, item.defaultAudioSink.audio.volume + delta));
-                    item.defaultAudioSink.audio.volume = newVolume;
-                }
-            }
-        }
+    VolumeIndicator {
+        iconSize: item.iconSize
+        iconName: item.iconName
+        audioSink: item.defaultAudioSink
     }
 }
