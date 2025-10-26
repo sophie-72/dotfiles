@@ -1,6 +1,4 @@
 import QtQuick
-import QtQuick.Layouts
-import Quickshell
 import Quickshell.Services.Pipewire
 import Quickshell.Io
 import qs
@@ -21,119 +19,26 @@ Item {
     property bool shouldShowOsd: false
     property bool suppressVolumeChange: true
 
-    PwObjectTracker {
-        objects: [item.defaultAudioSink]
-    }
-
-    Connections {
-        id: connections
-
-        function onVolumeChanged() {
-            if (item.suppressVolumeChange) {
-                item.suppressVolumeChange = false;
-            } else {
-                item.shouldShowOsd = true;
-                hideTimer.restart();
-            }
-        }
-    }
-
-    Timer {
-        id: sinkCheckTimer
-        interval: 100
-        running: true
-        repeat: true
-
-        onTriggered: {
-            if (item.defaultAudioSink && item.defaultAudioSink.audio) {
-                sinkCheckTimer.stop();
-                connections.target = item.defaultAudioSink.audio;
-            }
-        }
-    }
-
-    Timer {
-        id: hideTimer
-        interval: 1000
-        onTriggered: item.shouldShowOsd = false
-    }
-
-    LazyLoader {
-        active: item.shouldShowOsd
-
-        PanelWindow {
-            anchors.bottom: true
-            margins.bottom: Screen.height / 15
-            exclusiveZone: 0
-
-            implicitWidth: 400
-            implicitHeight: 50
-            color: "transparent"
-
-            mask: Region {}
-
-            Rectangle {
-                anchors.fill: parent
-                radius: height / 2
-                color: Theme.get.transparentBackgroundColor
-
-                RowLayout {
-                    anchors {
-                        fill: parent
-                        leftMargin: 10
-                        rightMargin: 15
-                    }
-
-                    Icon {
-                        color: Theme.get.pineColor
-                        size: 30
-                        iconName: {
-                            if (item.volumeMuted) {
-                                return "volume-xmark";
-                            } else if (item.volume > 50) {
-                                return "volume-high";
-                            } else if (item.volume > 0) {
-                                return "volume-low";
-                            } else {
-                                return "volume-off";
-                            }
-                        }
-                    }
-
-                    Rectangle {
-                        Layout.fillWidth: true
-
-                        implicitHeight: 10
-                        radius: 20
-                        color: Theme.get.subtleColor
-
-                        Rectangle {
-                            anchors {
-                                left: parent.left
-                                top: parent.top
-                                bottom: parent.bottom
-                            }
-
-                            implicitWidth: parent.width * (Pipewire.defaultAudioSink?.audio.volume ?? 0)
-                            radius: parent.radius
-                        }
-                    }
-
-                    Text {
-                        text: item.volume + "%"
-                        font.pixelSize: 14
-                        font.weight: Font.Bold
-                        color: Theme.get.textColor
-                        verticalAlignment: Text.AlignVCenter
-                        horizontalAlignment: Text.AlignHCenter
-                    }
-                }
-            }
+    property string iconName: {
+        if (item.volumeMuted) {
+            return "volume-xmark";
+        } else if (item.volume > 50) {
+            return "volume-high";
+        } else if (item.volume > 0) {
+            return "volume-low";
+        } else {
+            return "volume-off";
         }
     }
 
     width: iconSize
     height: pillHeight
+
+    VolumeOsd {
+        iconName: item.iconName
+        volume: item.volume
+        audioSink: item.defaultAudioSink
+    }
 
     Rectangle {
         id: iconCircle
@@ -144,17 +49,7 @@ Item {
         Icon {
             color: Theme.get.goldColor
             size: 24
-            iconName: {
-                if (item.volumeMuted) {
-                    return "volume-xmark";
-                } else if (item.volume > 50) {
-                    return "volume-high";
-                } else if (item.volume > 0) {
-                    return "volume-low";
-                } else {
-                    return "volume-off";
-                }
-            }
+            iconName: item.iconName
             anchors.centerIn: parent
         }
 
