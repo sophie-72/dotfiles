@@ -19,17 +19,36 @@ Item {
 
     property int maxPillWidth: 0
     property bool shouldShowOsd: false
+    property bool suppressVolumeChange: true
 
     PwObjectTracker {
-        objects: [Pipewire.defaultAudioSink]
+        objects: [item.defaultAudioSink]
     }
 
     Connections {
-        target: Pipewire.defaultAudioSink?.audio
+        id: connections
 
         function onVolumeChanged() {
-            item.shouldShowOsd = true;
-            hideTimer.restart();
+            if (item.suppressVolumeChange) {
+                item.suppressVolumeChange = false;
+            } else {
+                item.shouldShowOsd = true;
+                hideTimer.restart();
+            }
+        }
+    }
+
+    Timer {
+        id: sinkCheckTimer
+        interval: 100
+        running: true
+        repeat: true
+
+        onTriggered: {
+            if (item.defaultAudioSink && item.defaultAudioSink.audio) {
+                sinkCheckTimer.stop();
+                connections.target = item.defaultAudioSink.audio;
+            }
         }
     }
 
