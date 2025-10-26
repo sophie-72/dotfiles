@@ -14,31 +14,10 @@ Item {
     width: backgroundSize
     height: backgroundSize
 
-    Rectangle {
-        width: batteryWidget.backgroundSize
-        height: parent.height
-        color: "transparent"
-
-        Icon {
-            color: Theme.get.goldColor
-            size: 24
-            iconName: {
-                if (batteryWidget.percentage == 1) {
-                    return "battery-full";
-                } else if (batteryWidget.percentage >= 0.75) {
-                    return "battery-three-quarters";
-                } else if (batteryWidget.percentage >= 0.50) {
-                    return "battery-half";
-                } else if (batteryWidget.percentage >= 0.25) {
-                    return "battery-quarter";
-                } else {
-                    return "battery-empty";
-                }
-            }
-            Layout.alignment: Qt.AlignCenter
-        }
+    BatteryIndicator {
+        percentage: parent.percentage
     }
-
+    
     BatteryPopup {
         id: batteryPopup
         device: batteryWidget.device
