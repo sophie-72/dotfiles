@@ -5,6 +5,7 @@ import qs.battery
 import qs.bluetooth
 import qs.clock
 import qs.keyboard
+import qs.network
 import qs.power
 import qs.systemUsage
 import qs.updates
@@ -61,6 +62,10 @@ Scope {
                 }
 
                 Bluetooth {
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                Network {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
