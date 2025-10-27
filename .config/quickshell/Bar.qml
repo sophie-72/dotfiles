@@ -2,6 +2,7 @@ import Quickshell
 import QtQuick
 import QtQuick.Layouts
 import qs.battery
+import qs.bluetooth
 import qs.clock
 import qs.keyboard
 import qs.power
@@ -56,6 +57,10 @@ Scope {
                 anchors.bottomMargin: 5
 
                 Updates {
+                    Layout.alignment: Qt.AlignHCenter
+                }
+
+                Bluetooth {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
