@@ -22,4 +22,15 @@ Item {
             Layout.alignment: Qt.AlignCenter
         }
     }
+
+    BluetoothPopup {
+        id: bluetoothPopup
+    }
+
+    MouseArea {
+        anchors.fill: bluetoothWidget
+        hoverEnabled: true
+        onEntered: () => bluetoothPopup.visible = true
+        onExited: () => bluetoothPopup.visible = false
+    }
 }
