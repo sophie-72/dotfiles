@@ -9,7 +9,6 @@ Process {
             let interfacesText = "";
             const interfaces = this.text.trim().split("\n").map(i => {
                 const data = i.split(" ");
-                console.log(data);
                 interfacesText += data[0] + ": " + data[1] + "\n";
             });
             networkInterfaces.text = interfacesText;
