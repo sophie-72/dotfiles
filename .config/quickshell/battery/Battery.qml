@@ -1,5 +1,4 @@
 import QtQuick
-import QtQuick.Layouts
 import Quickshell.Services.UPower
 import qs
 
@@ -10,6 +9,8 @@ Item {
     readonly property real percentage: device.percentage
 
     property int backgroundSize: 26
+
+    visible: device.isLaptopBattery
 
     width: backgroundSize
     height: backgroundSize
