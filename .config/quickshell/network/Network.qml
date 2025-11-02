@@ -22,4 +22,15 @@ Item {
             Layout.alignment: Qt.AlignCenter
         }
     }
+
+    NetworkPopup {
+        id: networkPopup
+    }
+
+    MouseArea {
+        anchors.fill: networkWidget
+        hoverEnabled: true
+        onEntered: () => networkPopup.visible = true
+        onExited: () => networkPopup.visible = false
+    }
 }
