@@ -26,6 +26,7 @@ PopupWindow {
             Text {
                 id: currentConnectedNetwork
 
+                text: "Connected to "
                 color: Theme.get.textColor
                 font.weight: Font.Bold
             }

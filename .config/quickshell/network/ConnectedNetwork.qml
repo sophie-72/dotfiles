@@ -15,7 +15,7 @@ Process {
                     ssid: network[1]
                 };
             }).filter(n => n.active);
-            currentConnectedNetwork.text = networks[0].ssid;
+            currentConnectedNetwork.text += networks[0].ssid;
         }
     }
 }
