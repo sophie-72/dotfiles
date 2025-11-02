@@ -12,6 +12,7 @@ fi
 echo -e "\nInstalling required packages"
 paru -S --needed \
     glibc-locales \
+    jq \
     curl \
     zsh \
     helix \

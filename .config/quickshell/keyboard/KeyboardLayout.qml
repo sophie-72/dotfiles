@@ -11,7 +11,7 @@ Singleton {
 
     Process {
         id: process
-        command: ["sh", "-c", "hyprctl devices -j | jq -r '.keyboards[] | .active_keymap' | tail -n 1 | awk -F'\\(' '{ if (NF>1) print substr($0, 1, 2)}' | tr 'A-Z' 'a-z'"]
+        command: ["sh", "-c", "hyprctl devices -j | jq -r '.keyboards[] | .active_keymap' | sort | uniq | tail -n 1 | awk -F'\\(' '{ if (NF>1) print substr($0, 1, 2)}' | tr 'A-Z' 'a-z'"]
         running: true
 
         stdout: StdioCollector {
