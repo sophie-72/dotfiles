@@ -47,7 +47,9 @@ paru -S --needed \
     pipewire-pulse \
     pipewire-alsa \
     pipewire-audio \
-    pavucontrol
+    pavucontrol \
+    quickshell \
+    qt6-5compat
 
 echo -e "\nInstalling oh-my-zsh and plugins"
 echo "IMPORTANT: Type 'exit' after the Oh My Zsh installation to allow this script to continue."
