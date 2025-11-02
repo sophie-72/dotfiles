@@ -30,8 +30,16 @@ PopupWindow {
                 color: Theme.get.textColor
                 font.weight: Font.Bold
             }
+
+            Text {
+                id: networkInterfaces
+
+                color: Theme.get.textColor
+                font.weight: Font.Bold
+            }
         }
 
         ConnectedNetwork {}
+        NetworkInterfaces {}
     }
 }
