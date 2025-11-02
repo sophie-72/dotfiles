@@ -24,21 +24,16 @@ PopupWindow {
             anchors.leftMargin: 10
 
             Text {
-                id: currentConnectedNetwork
-
                 text: "Connected to " + ConnectedNetwork.currentConnectedNetwork
                 color: Theme.get.textColor
                 font.weight: Font.Bold
             }
 
             Text {
-                id: networkInterfaces
-
+                text: NetworkInterfaces.interfaces
                 color: Theme.get.textColor
                 font.weight: Font.Bold
             }
         }
-
-        NetworkInterfaces {}
     }
 }
