@@ -10,7 +10,7 @@ Rectangle {
     color: "transparent"
 
     Icon {
-        color: Theme.get.goldColor
+        color: Theme.get.roseColor
         size: 24
         iconName: {
             if (parent.percentage == 1) {

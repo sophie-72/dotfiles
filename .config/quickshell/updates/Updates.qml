@@ -19,7 +19,7 @@ Item {
             spacing: 0
             
             Icon {
-                color: Theme.get.goldColor
+                color: Theme.get.irisColor
                 size: 24
                 iconName: "circle-up"
                 Layout.alignment: Qt.AlignCenter
@@ -28,7 +28,7 @@ Item {
             Text {
                 text: UpdatesCount.count
                 font.weight: Font.Bold
-                color: Theme.get.goldColor
+                color: Theme.get.irisColor
                 Layout.alignment: Qt.AlignCenter
             }
         }
