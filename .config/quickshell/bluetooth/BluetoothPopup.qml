@@ -39,7 +39,7 @@ PopupWindow {
 
                     required property BluetoothDevice modelData
 
-                    text: connectedDevice.modelData.name
+                    text: " ".repeat(4) + connectedDevice.modelData.name
                     color: Theme.get.textColor
                     font.weight: Font.Bold
                 }
@@ -60,7 +60,7 @@ PopupWindow {
 
                     required property BluetoothDevice modelData
 
-                    text: pairedDevice.modelData.name
+                    text: " ".repeat(4) + pairedDevice.modelData.name
                     color: Theme.get.textColor
                     font.weight: Font.Bold
                 }
