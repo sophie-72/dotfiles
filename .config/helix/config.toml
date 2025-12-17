@@ -1,1 +1,5 @@
 theme = "rose_pine_moon"
+
+[editor.soft-wrap]
+enable = true
+wrap-indicator = ""
