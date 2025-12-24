@@ -1,0 +1,5 @@
+import quickshell
+
+Scope {
+    Launcher {}
+}
