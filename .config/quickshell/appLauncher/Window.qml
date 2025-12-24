@@ -1,4 +1,5 @@
 import Quickshell
+import QtQuick
 import qs
 
 FloatingWindow {
@@ -8,4 +9,15 @@ FloatingWindow {
   maximumSize: Qt.size(500, 400)
 
   color: Theme.get.backgroundColor
+
+  TextInput {
+    text: "Test!"
+    color: Theme.get.goldColor
+    width: parent.width
+
+    font {
+      bold: true
+      pointSize: 14
+    }
+  }
 }
