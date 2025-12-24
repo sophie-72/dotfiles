@@ -1,4 +1,5 @@
 import Quickshell
+import qs
 
 FloatingWindow {
   id: toplevel
@@ -6,4 +7,5 @@ FloatingWindow {
   minimumSize: Qt.size(500, 400)
   maximumSize: Qt.size(500, 400)
 
+  color: Theme.get.backgroundColor
 }
