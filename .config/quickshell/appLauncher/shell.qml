@@ -1,5 +1,5 @@
-import quickshell
+import Quickshell
 
 Scope {
-    Launcher {}
+    Window {}
 }
