@@ -1,1 +1,1 @@
-rsync -aAXH --info=progress2 --exclude='/dev/*' --exclude='/proc/*' --exclude='/sys/*' --exclude='/tmp/*' --exclude='/run/*' --exclude='/mnt/*' --exclude='/media/*' --exclude='/lost+found/' --exclude='/home/*/.cache' --exclude='/var/cache/' / /mnt/backup
+rsync -aAXH --info=progress2 --exclude='/home/*/.cache' --exclude='/home/*/VirtualBox VMs' /home/ /mnt/backup
