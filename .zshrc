@@ -123,3 +123,6 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:/usr/lib/qt6/bin
 
+# Set the defautl text editor to helix
+export VISUAL=helix
+export EDITOR="$VISUAL"
