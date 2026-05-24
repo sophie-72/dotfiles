@@ -54,7 +54,7 @@ paru -S --needed \
     qt6-5compat
 
 echo "Setting the locale to en_US.UTF-8"
-localectl set-locale LANG=en_US.UTF-8
+sudo localectl set-locale LANG=en_US.UTF-8
 
 echo -e "\nInstalling oh-my-zsh and plugins"
 echo "IMPORTANT: Type 'exit' after the Oh My Zsh installation to allow this script to continue."
