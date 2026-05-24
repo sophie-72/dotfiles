@@ -11,4 +11,10 @@ WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" 
 # Apply the selected wallpaper
 hyprctl hyprpaper wallpaper ", $WALLPAPER"
 
-echo "Selected wallpaper: $WALLPAPER" >> /tmp/randomize-wallpaper.log
+# Dynamic Color Injection
+if command -v matugen &> /dev/null; then
+    matugen image "$WALLPAPER" -m dark
+    
+    # Reload Kitty instances instantly on the fly
+    kill -SIGUSR1 $(pgrep kitty) 2>/dev/null
+fi

@@ -1,0 +1,12 @@
+/* Custom wallpaper colors injected via Matugen */
+@define-color theme_bg_color {{colors.background.default.hex}};
+@define-color theme_fg_color {{colors.on_background.default.hex}};
+@define-color theme_surface_color {{colors.surface.default.hex}};
+@define-color theme_view_color {{colors.surface_bright.default.hex}};
+
+@define-color accent_color {{colors.primary.default.hex}};
+@define-color accent_bg_color {{colors.primary.default.hex}};
+@define-color accent_fg_color {{colors.background.default.hex}};
+
+@define-color theme_selected_bg_color {{colors.primary.default.hex}};
+@define-color theme_selected_fg_color {{colors.background.default.hex}};
