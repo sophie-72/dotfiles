@@ -51,7 +51,8 @@ paru -S --needed \
     pipewire-audio \
     pavucontrol \
     quickshell \
-    qt6-5compat
+    qt6-5compat \
+    matugen
 
 echo "Setting the locale to en_US.UTF-8"
 sudo localectl set-locale LANG=en_US.UTF-8
