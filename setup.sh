@@ -29,9 +29,6 @@ paru -S --needed \
     hyprpolkitagent \
     udiskie \
     waybar \
-    rofi \
-    rofi-power-menu \
-    dunst \
     kitty \
     qt5-base \
     qt5-graphicaleffects \
@@ -52,7 +49,8 @@ paru -S --needed \
     pavucontrol \
     quickshell \
     qt6-5compat \
-    matugen
+    matugen \
+    mako
 
 echo "Setting the locale to en_US.UTF-8"
 sudo localectl set-locale LANG=en_US.UTF-8

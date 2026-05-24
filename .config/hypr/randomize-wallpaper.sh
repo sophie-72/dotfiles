@@ -18,3 +18,5 @@ if command -v matugen &> /dev/null; then
     # Reload Kitty instances instantly on the fly
     kill -SIGUSR1 $(pgrep kitty) 2>/dev/null
 fi
+
+makoctl reload
