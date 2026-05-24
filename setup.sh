@@ -50,7 +50,8 @@ paru -S --needed \
     quickshell \
     qt6-5compat \
     matugen \
-    mako
+    mako \
+    vim
 
 echo "Setting the locale to en_US.UTF-8"
 sudo localectl set-locale LANG=en_US.UTF-8
