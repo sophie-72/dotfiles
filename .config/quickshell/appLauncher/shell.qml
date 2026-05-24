@@ -1,5 +1,12 @@
 import Quickshell
+import qs
 
 Scope {
-    Window {}
+    Launcher {
+        id: appLauncher
+    }
+
+    Window {
+        launcher: appLauncher
+    }
 }
