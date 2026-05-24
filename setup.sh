@@ -28,7 +28,6 @@ paru -S --needed \
     xdg-desktop-portal-hyprland \
     hyprpolkitagent \
     udiskie \
-    waybar \
     kitty \
     qt5-base \
     qt5-graphicaleffects \
