@@ -8,6 +8,9 @@ CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 # Get a random wallpaper that is not the current one
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
 
+# Create a permanent symlink pointing to the newly chosen wallpaper
+ln -sf "$WALLPAPER" "$HOME/.config/hypr/current_wallpaper.png"
+
 # Dynamic Color Injection
 if command -v matugen &> /dev/null; then
     matugen image "$WALLPAPER" -m dark
