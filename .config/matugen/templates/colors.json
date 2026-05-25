@@ -1,9 +1,0 @@
-{
-  "background": "{{colors.background.default.hex}}",
-  "on_background": "{{colors.on_background.default.hex}}",
-  "primary": "{{colors.primary.default.hex}}",
-  "secondary": "{{colors.secondary.default.hex}}",
-  "surface": "{{colors.surface.default.hex}}",
-  "surface_bright": "{{colors.surface_bright.default.hex}}",
-  "accent": "{{colors.primary_container.default.hex}}"
-}
