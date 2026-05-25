@@ -8,9 +8,6 @@ CURRENT_WALL=$(hyprctl hyprpaper listloaded)
 # Get a random wallpaper that is not the current one
 WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
 
-# Apply the selected wallpaper
-hyprctl hyprpaper wallpaper ", $WALLPAPER"
-
 # Dynamic Color Injection
 if command -v matugen &> /dev/null; then
     matugen image "$WALLPAPER" -m dark
@@ -20,3 +17,6 @@ if command -v matugen &> /dev/null; then
 fi
 
 makoctl reload
+
+# Set the wallpaper with a crisp, geometric wave transition
+awww img "$WALLPAPER" --transition-type wave --transition-angle 45 --transition-duration 1.5
