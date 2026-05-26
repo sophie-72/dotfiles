@@ -10,12 +10,12 @@ Rectangle {
 
     implicitWidth: buttonSize
     implicitHeight: buttonSize
-    color: Theme.get.roseColor
+    color: Theme.tertiary
     radius: buttonRadius
     Layout.alignment: Qt.AlignHCenter
 
     Icon {
-        color: Theme.get.backgroundColor
+        color: Theme.backgroundColor
         size: parent.iconSize
         iconName: "arrows-rotate"
         anchors.verticalCenter: parent.verticalCenter

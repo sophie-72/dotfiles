@@ -16,7 +16,7 @@ Item {
         color: "transparent"
 
         Icon {
-            color: Theme.get.loveColor
+            color: Theme.errorColor
             size: 24
             iconName: "power-off"
             Layout.alignment: Qt.AlignCenter

@@ -68,7 +68,7 @@ Item {
             Rectangle {
                 anchors.fill: parent
                 radius: height / 2
-                color: Theme.get.transparentBackgroundColor
+                color: Theme.transparentBackgroundColor
 
                 RowLayout {
                     anchors {
@@ -78,7 +78,7 @@ Item {
                     }
 
                     Icon {
-                        color: Theme.get.pineColor
+                        color: Theme.primary
                         size: 30
                         iconName: osd.iconName
                     }
@@ -88,7 +88,7 @@ Item {
 
                         implicitHeight: 10
                         radius: 20
-                        color: Theme.get.subtleColor
+                        color: Theme.subtleColor
 
                         Rectangle {
                             anchors {
@@ -106,7 +106,7 @@ Item {
                         text: osd.volume + "%"
                         font.pixelSize: 14
                         font.weight: Font.Bold
-                        color: Theme.get.textColor
+                        color: Theme.textColor
                         verticalAlignment: Text.AlignVCenter
                         horizontalAlignment: Text.AlignHCenter
                     }

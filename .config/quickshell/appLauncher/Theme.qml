@@ -27,7 +27,7 @@ Singleton {
 
             backgroundColor = get(c.background, backgroundColor);
             transparentBackgroundColor = c.background ? "#E6" + c.background.replace("#", "") : transparentBackgroundColor;
-            
+
             // Refined mapping for Material You structure
             overlayColor  = get(c.surface?.variant, get(c.surface_variant, overlayColor));
             mutedColor    = get(c.surface?.on_surface_variant, get(c.muted, mutedColor));

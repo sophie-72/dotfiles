@@ -19,7 +19,7 @@ Item {
             spacing: 0
 
             Icon {
-                color: Theme.get.roseColor
+                color: Theme.accentColor
                 size: 24
                 iconName: "keyboard"
                 Layout.alignment: Qt.AlignCenter
@@ -28,7 +28,7 @@ Item {
             Text {
                 text: KeyboardLayout.layout
                 font.weight: Font.Bold
-                color: Theme.get.roseColor
+                color: Theme.tertiary
                 Layout.alignment: Qt.AlignCenter
             }
         }

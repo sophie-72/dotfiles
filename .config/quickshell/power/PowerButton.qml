@@ -10,12 +10,12 @@ Rectangle {
 
     implicitWidth: buttonSize
     implicitHeight: buttonSize
-    color: Theme.get.loveColor
+    color: Theme.errorColor
     radius: buttonRadius
     Layout.alignment: Qt.AlignHCenter
 
     Icon {
-        color: Theme.get.backgroundColor
+        color: Theme.backgroundColor
         size: parent.iconSize
         iconName: "power-off"
         anchors.verticalCenter: parent.verticalCenter

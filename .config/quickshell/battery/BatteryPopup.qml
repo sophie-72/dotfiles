@@ -20,7 +20,7 @@ PopupWindow {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.get.transparentBackgroundColor
+        color: Theme.transparentBackgroundColor
         radius: 10
 
         ColumnLayout {
@@ -29,7 +29,7 @@ PopupWindow {
 
             Text {
                 text: (batteryPopup.device.percentage * 100) + "% (" + UPowerDeviceState.toString(batteryPopup.device.state) + ")"
-                color: Theme.get.textColor
+                color: Theme.textColor
                 font.weight: Font.Bold
             }
 
@@ -59,7 +59,7 @@ PopupWindow {
 
                     return output;
                 }
-                color: Theme.get.textColor
+                color: Theme.textColor
                 font.weight: Font.Bold
             }
         }

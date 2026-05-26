@@ -15,7 +15,7 @@ Item {
         color: "transparent"
 
         Icon {
-            color: Theme.get.roseColor
+            color: Theme.accentColor
             size: 24
             iconName: "gauge-high"
         }
