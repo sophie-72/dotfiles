@@ -17,33 +17,41 @@ Singleton {
     property string errorColor: "#eb6f92"
     property string outlineColor: "#6e6a86"
 
-    FileView {
-        id: themeReader
-        path: Quickshell.configDir + "/colors.json"
-        
-        onTextChanged: (text) => {
-            try {
-                let parsed = JSON.parse(text);
-                let colors = parsed.colors;
+    function _updateTheme(data) {
+        try {
+            const parsed = JSON.parse(data);
+            const c = parsed.colors || parsed; // Support both nested and flat JSON
 
-                theme.backgroundColor = colors.background;
-                theme.transparentBackgroundColor = "#E6" + colors.background.replace("#", "");
-                theme.overlayColor = colors.surface.variant;
-                theme.mutedColor = colors.surface.on_surface_variant;
-                theme.subtleColor = colors.outline;
-                theme.textColor = colors.surface.on_surface;
-                theme.accentColor = colors.primary.base;
-                theme.errorColor = colors.status.error;
-                theme.outlineColor = colors.outline;
-                
-                console.log("Quickshell: Matugen theme applied successfully!");
-            } catch (e) {
-                console.warn("Quickshell: Failed to parse colors.json, using fallbacks colors.", e);
-            }
+            // Helper to safely get nested values or fallback to current property
+            const get = (val, fallback) => val !== undefined ? val : fallback;
+
+            backgroundColor = get(c.background, backgroundColor);
+            transparentBackgroundColor = c.background ? "#E6" + c.background.replace("#", "") : transparentBackgroundColor;
+            
+            // Refined mapping for Material You structure
+            overlayColor  = get(c.surface?.variant, get(c.surface_variant, overlayColor));
+            mutedColor    = get(c.surface?.on_surface_variant, get(c.muted, mutedColor));
+            subtleColor   = get(c.outline, subtleColor);
+            textColor     = get(c.surface?.on_surface, get(c.on_background, textColor));
+            accentColor   = get(c.primary?.base, get(c.primary, accentColor));
+            errorColor    = get(c.status?.error, get(c.error, errorColor));
+            outlineColor  = get(c.outline, outlineColor);
+
+            console.log("Quickshell: Theme updated dynamically");
+        } catch (e) {
+            console.warn("Quickshell: Theme parse error:", e);
         }
     }
 
-    Component.onCompleted: {
-        themeReader.read();
+    FileView {
+        id: themeReader
+        path: Quickshell.shellDir + "/../colors.json"
+        
+        onTextChanged: {
+            const content = String(themeReader.text());
+            if (content.trim() !== "") {
+                theme._updateTheme(content);
+            }
+        }
     }
 }
