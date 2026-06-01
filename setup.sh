@@ -54,7 +54,7 @@ systemctl --user enable --now pipewire pipewire-pulse wireplumber
 echo -e "\nConfiguring SDDM Login Environment"
 sudo mkdir -p /etc/sddm.conf.d/
 
-sudo cp .config/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
+sudo cp .config/sddm/sddm.conf /etc/sddm.conf
 
 sudo mkdir -p /usr/share/sddm/themes/sugar-candy/Backgrounds/
 sudo touch /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wall.jpg
