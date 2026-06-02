@@ -4,7 +4,6 @@ reload_apps = true
 [templates.quickshell]
 input_path = '~/.config/matugen/templates/quickshell.json'
 output_path = '~/.config/quickshell/colors.json'
-post_hook = 'quickshell --signal reload-theme'
 
 [templates.hyprland]
 input_path = '~/.config/matugen/templates/hyprland.conf'
