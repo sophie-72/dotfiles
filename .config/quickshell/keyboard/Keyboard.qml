@@ -28,7 +28,7 @@ Item {
             Text {
                 text: KeyboardLayout.layout
                 font.weight: Font.Bold
-                color: Theme.tertiary
+                color: Theme.accentColor
                 Layout.alignment: Qt.AlignCenter
             }
         }
