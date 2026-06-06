@@ -52,4 +52,4 @@ systemctl --user enable --now pipewire pipewire-pulse wireplumber
 
 
 echo -e "\nConfiguring SDDM Login Environment"
-curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
