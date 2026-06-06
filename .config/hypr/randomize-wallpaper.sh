@@ -8,17 +8,12 @@ fi
 
 WALLPAPER_DIR="$HOME/wallpapers/"
 
-# Get the actual current wallpaper by reading where the symlink points
-if [ -L "$HOME/.config/hypr/current_wallpaper.png" ]; then
+# ONLY filter out the current wallpaper if we are doing a mid-session manual swap
+if [ "$IS_INIT" = false ] && [ -L "$HOME/.config/hypr/current_wallpaper.png" ]; then
     CURRENT_WALL=$(readlink -f "$HOME/.config/hypr/current_wallpaper.png")
-else
-    CURRENT_WALL=""
-fi
-
-# Get a random wallpaper that is not the current one
-if [ -n "$CURRENT_WALL" ]; then
     WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
 else
+    # On login, grab a completely unrestricted random wallpaper instantly
     WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
 fi
 
@@ -40,7 +35,7 @@ makoctl reload
 
 # Set the wallpaper based on execution mode
 if [ "$IS_INIT" = true ]; then
-    # Instant load on login—no transition animation
+    # Force awww to override its automatic boot cache instantly
     awww img "$WALLPAPER" --transition-type none
 else
     # INSTANT mid-session swap with the crisp, geometric wave transition
