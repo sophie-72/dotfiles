@@ -17,7 +17,7 @@ fi
 echo -e "\nInstalling required packages"
 paru -S --needed \
     jq curl zsh helix openssh papirus-icon-theme \
-    sddm sddm-sugar-candy-git awww hyprland hypridle hyprlock \
+    sddm awww hyprland hypridle hyprlock \
     xdg-desktop-portal-hyprland hyprpolkitagent xdg-utils \
     udiskie kitty qt5-base qt6-5compat quickshell \
     matugen mako vim wireplumber brightnessctl playerctl \
@@ -52,15 +52,4 @@ systemctl --user enable --now pipewire pipewire-pulse wireplumber
 
 
 echo -e "\nConfiguring SDDM Login Environment"
-sudo mkdir -p /etc/sddm.conf.d/
-
-sudo cp .config/sddm/sddm.conf /etc/sddm.conf
-
-sudo mkdir -p /usr/share/sddm/themes/sugar-candy/Backgrounds/
-sudo touch /usr/share/sddm/themes/sugar-candy/Backgrounds/current_wall.jpg
-
-sudo systemctl enable sddm
-
-# Allow Matugen to apply styles to the SDDM folder cleanly
-echo "$USER ALL=(ALL) NOPASSWD: /home/$USER/.config/sddm/apply-theme.sh" | sudo tee /etc/sudoers.d/sddm-matugen-updater > /dev/null
-sudo chmod 0440 /etc/sudoers.d/sddm-matugen-updater
+curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh
