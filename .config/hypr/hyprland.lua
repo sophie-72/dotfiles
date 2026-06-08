@@ -29,8 +29,8 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "dolphin"
-local menu        = "hyprlauncher"
+local menu        = "quickshell --path ~/.config/quickshell/appLauncher"
+-- local menu        = "hyprlauncher"
 
 
 -------------------
@@ -47,6 +47,15 @@ local menu        = "hyprlauncher"
 --   hl.exec_cmd("nm-applet")
 --   hl.exec_cmd("waybar & hyprpaper & firefox")
 -- end)
+hl.on("hyprland.start", function () 
+  hl.exec_cmd("awww-daemon & ~/.config/hypr/randomize-wallpaper.sh --init")
+  hl.exec_cmd("hypridle")
+  hl.exec_cmd("mako")
+  hl.exec_cmd("systemctl --user start hyprpolkitagent")
+  hl.exec_cmd("udiskie")
+  hl.exec_cmd("quickshell")
+  hl.exec_cmd("~/.config/bluetooth-monitor.sh")
+end)
 
 
 -------------------------------
