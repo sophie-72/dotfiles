@@ -4,12 +4,9 @@
 - Text Editor: [Helix](https://helix-editor.com/)
 - Display Manager: [SDDM](https://github.com/sddm/sddm/)
 - Compositor: [Hyprland](https://hyprland.org/)
-- Bar & Power Menu: [Quickshell](https://quickshell.org/)
-- Application launcher: [Rofi](https://github.com/lbonn/rofi)
-- Notification daemon: [Dunst](https://github.com/dunst-project/dunst)
+- Bar, Power Menu & Application Launcher: [Quickshell](https://quickshell.org/)
+- Notification Daemon: [Mako](https://github.com/emersion/mako)
 - Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
-- Global theme: [Rosé Pine Moon](https://rosepinetheme.com/)
-- Lock Screen Wallpaper: [https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png](https://github.com/rose-pine/wallpapers/blob/main/blockwavemoon.png)
 
 
 ## Clone the repository as a bare repository

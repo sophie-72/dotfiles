@@ -19,12 +19,12 @@ Singleton {
         implicitWidth: (root.itemSize * 3) + (root.margin * 8)
         implicitHeight: root.itemSize + (root.margin * 4)
         visible: root.visible
-        color: "transparent"
+        color: Theme.transparentBackgroundColor
 
         Rectangle {
             focus: true
             anchors.fill: parent
-            color: Theme.get.transparentBackgroundColor
+            color: "transparent"
             radius: root.radius
 
             RowLayout {

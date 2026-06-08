@@ -15,7 +15,7 @@ PopupWindow {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.get.transparentBackgroundColor
+        color: Theme.transparentBackgroundColor
         radius: 10
 
         ColumnLayout {
@@ -25,13 +25,13 @@ PopupWindow {
             Text {
                 text: "CPU usage: " + CpuUsage.utilizationPercentage + "%"
                 font.weight: Font.Bold
-                color: Theme.get.textColor
+                color: Theme.textColor
             }
 
             Text {
                 text: "RAM usage: " + MemoryUsage.usedMemory + "/" + MemoryUsage.totalMemory
                 font.weight: Font.Bold
-                color: Theme.get.textColor
+                color: Theme.textColor
             }
 
             Text {
@@ -47,7 +47,7 @@ PopupWindow {
                     return output;
                 }
                 font.weight: Font.Bold
-                color: Theme.get.textColor
+                color: Theme.textColor
             }
         }
     }

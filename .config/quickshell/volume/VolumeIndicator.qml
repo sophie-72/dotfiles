@@ -14,7 +14,7 @@ Rectangle {
     color: "transparent"
 
     Icon {
-        color: Theme.get.goldColor
+        color: Theme.accentColor
         size: 24
         iconName: volumeIndicator.iconName
         anchors.centerIn: parent

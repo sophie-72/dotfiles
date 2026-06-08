@@ -9,7 +9,7 @@ FloatingWindow {
   minimumSize: Qt.size(500, 600)
   maximumSize: Qt.size(500, 600)
 
-  color: Theme.get.backgroundColor
+  color: Theme.backgroundColor
 
   property var launcher
   property int selectedIndex: -1
@@ -71,7 +71,7 @@ FloatingWindow {
     Rectangle {
       width: parent.width
       height: 40
-      color: Theme.get.overlayColor
+      color: Theme.overlayColor
       radius: 8
 
       TextInput {
@@ -83,7 +83,7 @@ FloatingWindow {
         anchors.rightMargin: 12
 
         font.pointSize: 12
-        color: Theme.get.textColor
+        color: Theme.textColor
 
         onTextChanged: {
           appsListView.filterText = text
@@ -117,7 +117,7 @@ FloatingWindow {
         anchors.leftMargin: 12
         anchors.verticalCenter: parent.verticalCenter
         text: "Search apps..."
-        color: Theme.get.mutedColor
+        color: Theme.mutedColor
         font.pointSize: 12
         visible: searchInput.text === ""
       }
@@ -131,7 +131,7 @@ FloatingWindow {
 
       Text {
         text: "Recent"
-        color: Theme.get.subtleColor
+        color: Theme.subtleColor
         font.pointSize: 10
         font.bold: true
       }
@@ -149,7 +149,7 @@ FloatingWindow {
             color: {
               let totalRecents = launcher.displayRecentApps.length
               if (index < totalRecents && index === toplevel.selectedIndex) {
-                return Theme.get.overlayColor
+                return Theme.overlayColor
               }
               return "transparent"
             }
@@ -159,7 +159,7 @@ FloatingWindow {
               anchors.fill: parent
               hoverEnabled: true
               onEntered: {
-                parent.color = Theme.get.overlayColor
+                parent.color = Theme.overlayColor
                 toplevel.selectedIndex = index
               }
               onExited: {
@@ -180,7 +180,7 @@ FloatingWindow {
               anchors.leftMargin: 8
               anchors.verticalCenter: parent.verticalCenter
               text: modelData.name
-              color: Theme.get.textColor
+              color: Theme.textColor
               font.pointSize: 11
             }
           }
@@ -192,7 +192,7 @@ FloatingWindow {
     Rectangle {
       width: parent.width
       height: 1
-      color: Theme.get.overlayColor
+      color: Theme.overlayColor
       visible: launcher.displayRecentApps.length > 0 && searchInput.text === ""
     }
 
@@ -224,7 +224,7 @@ FloatingWindow {
           color: {
             let recentCount = (launcher.displayRecentApps.length > 0 && searchInput.text === "") ? launcher.displayRecentApps.length : 0
             if (index + recentCount === toplevel.selectedIndex) {
-              return Theme.get.overlayColor
+              return Theme.overlayColor
             }
             return "transparent"
           }
@@ -235,7 +235,7 @@ FloatingWindow {
             hoverEnabled: true
             onEntered: {
               let recentCount = (launcher.displayRecentApps.length > 0 && searchInput.text === "") ? launcher.displayRecentApps.length : 0
-              parent.color = Theme.get.overlayColor
+              parent.color = Theme.overlayColor
               toplevel.selectedIndex = index + recentCount
             }
             onExited: {
@@ -257,7 +257,7 @@ FloatingWindow {
             anchors.leftMargin: 8
             anchors.verticalCenter: parent.verticalCenter
             text: modelData.name
-            color: Theme.get.textColor
+            color: Theme.textColor
             font.pointSize: 11
           }
         }
@@ -271,7 +271,7 @@ FloatingWindow {
       Text {
         anchors.centerIn: parent
         text: "No applications found"
-        color: Theme.get.mutedColor
+        color: Theme.mutedColor
         font.pointSize: 11
         visible: appsListView.model.length === 0 && appsListView.filterText !== ""
       }

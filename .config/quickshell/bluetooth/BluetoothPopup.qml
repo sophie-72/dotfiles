@@ -16,7 +16,7 @@ PopupWindow {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.get.transparentBackgroundColor
+        color: Theme.transparentBackgroundColor
         radius: 10
 
         ColumnLayout {
@@ -25,7 +25,7 @@ PopupWindow {
 
             Text {
                 text: "Connected"
-                color: Theme.get.textColor
+                color: Theme.textColor
                 font.weight: Font.Bold
             }
 
@@ -40,13 +40,13 @@ PopupWindow {
                     required property BluetoothDevice modelData
 
                     text: " ".repeat(4) + connectedDevice.modelData.name
-                    color: Theme.get.textColor
+                    color: Theme.textColor
                     font.weight: Font.Bold
                 }
             }
             Text {
                 text: "Paired"
-                color: Theme.get.textColor
+                color: Theme.textColor
                 font.weight: Font.Bold
             }
 
@@ -61,7 +61,7 @@ PopupWindow {
                     required property BluetoothDevice modelData
 
                     text: " ".repeat(4) + pairedDevice.modelData.name
-                    color: Theme.get.textColor
+                    color: Theme.textColor
                     font.weight: Font.Bold
                 }
             }

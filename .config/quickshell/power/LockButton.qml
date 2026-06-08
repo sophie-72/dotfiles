@@ -10,13 +10,13 @@ Rectangle {
 
     implicitWidth: buttonSize
     implicitHeight: buttonSize
-    color: Theme.get.goldColor
+    color: Theme.secondary
     radius: buttonRadius
     Layout.alignment: Qt.AlignHCenter
 
 
     Icon {
-        color: Theme.get.backgroundColor
+        color: Theme.backgroundColor
         size: parent.iconSize
         iconName: "lock"
         anchors.verticalCenter: parent.verticalCenter

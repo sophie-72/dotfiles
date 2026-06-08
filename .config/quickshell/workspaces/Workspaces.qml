@@ -16,7 +16,7 @@ Repeater {
         }
 
         Icon {
-            color: (modelData.focused || modelData.active) ? Theme.get.pineColor : Theme.get.mutedColor
+            color: (modelData.focused || modelData.active) ? Theme.primary : Theme.mutedColor
             size: 18
             iconName:  modelData.focused ? "circle-dot" : "circle"
             anchors.centerIn: parent

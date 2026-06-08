@@ -16,7 +16,7 @@ PopupWindow {
 
     Rectangle {
         anchors.fill: parent
-        color: Theme.get.transparentBackgroundColor
+        color: Theme.transparentBackgroundColor
         radius: 10
 
         ColumnLayout {
@@ -25,13 +25,13 @@ PopupWindow {
 
             Text {
                 text: "Connected to " + ConnectedNetwork.currentConnectedNetwork
-                color: Theme.get.textColor
+                color: Theme.textColor
                 font.weight: Font.Bold
             }
 
             Text {
                 text: NetworkInterfaces.interfaces
-                color: Theme.get.textColor
+                color: Theme.textColor
                 font.weight: Font.Bold
             }
         }

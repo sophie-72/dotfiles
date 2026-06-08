@@ -16,7 +16,7 @@ Item {
         color: "transparent"
 
         Icon {
-            color: Theme.get.goldColor
+            color: Theme.accentColor
             size: 24
             iconName: "wifi"
             Layout.alignment: Qt.AlignCenter
