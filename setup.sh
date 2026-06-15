@@ -5,18 +5,23 @@ set -e
 
 echo "Installing Paru (AUR Helper)"
 if ! command -v paru &> /dev/null; then
-    sudo pacman -S --needed base-devel git
+    sudo pacman -S --needed --noconfirm base-devel git
     mkdir -p /tmp/paru-build
     git clone https://aur.archlinux.org/paru.git /tmp/paru-build/paru
-    cd /tmp/paru-build/paru
-    makepkg -si --noconfirm
-    cd -
+
+    # Using a subshell () keeps directory changes isolated
+    (
+        cd /tmp/paru-build/paru
+        makepkg -si --noconfirm
+    )
+    # Automatically back in the original directory here
+    rm -rf /tmp/paru-build
 fi
 
-
 echo -e "\nInstalling required packages"
-paru -S --needed \
+paru -S --needed --noconfirm \
     jq curl zsh helix openssh papirus-icon-theme \
+    less man-db man-pages \
     sddm awww hyprland hypridle hyprlock \
     xdg-desktop-portal-hyprland hyprpolkitagent xdg-utils \
     udiskie kitty qt5-base qt6-5compat quickshell \
@@ -24,32 +29,32 @@ paru -S --needed \
     otf-font-awesome grim slurp wl-clipboard zen-browser-bin \
     bluez bluez-utils pipewire pipewire-pulse pipewire-alsa pipewire-audio pavucontrol
 
-
-echo "Setting the locale to en_US.UTF-8"
-sudo localectl set-locale LANG=en_US.UTF-8
-
+echo "Setting the locale to en_CA.UTF-8"
+sudo localectl set-locale LANG=en_CA.UTF-8
 
 echo -e "\nInstalling oh-my-zsh and plugins"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" "" --unattended
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
     ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
-    git clone https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
-    git clone https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
-    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
+    git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$ZSH_CUSTOM/themes/powerlevel10k"
+    git clone --depth=1 https://github.com/zsh-users/zsh-autosuggestions "$ZSH_CUSTOM/plugins/zsh-autosuggestions"
+    git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git "$ZSH_CUSTOM/plugins/zsh-syntax-highlighting"
 
-    echo 'export EDITOR="helix"' >> ~/.zshrc
-    echo 'export VISUAL="helix"' >> ~/.zshrc
+    rm .zshrc
+    mv .zshrc.pre-oh-my-zsh .zshrc
 fi
 
+if [ "$SHELL" != "$(which zsh)" ]; then
+    echo "Changing default shell to zsh..."
+    sudo chsh -s "$(which zsh)"
+fi
 
 echo -e "\nStarting and enabling bluetooth"
 sudo systemctl enable --now bluetooth
 
-
 echo -e "\nEnabling audio stacks (Pipewire + Wireplumber)"
 systemctl --user enable --now pipewire pipewire-pulse wireplumber
-
 
 echo -e "\nConfiguring SDDM Login Environment"
 bash -c "$(curl -fsSL https://raw.githubusercontent.com/keyitdev/sddm-astronaut-theme/master/setup.sh)"
