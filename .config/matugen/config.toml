@@ -9,6 +9,10 @@ output_path = '~/.config/quickshell/colors.json'
 input_path = '~/.config/matugen/templates/hyprland.conf'
 output_path = '~/.config/hypr/colors.conf'
 
+[templates.hyprland]
+input_path = '~/.config/matugen/templates/hyprland.lua'
+output_path = '~/.config/hypr/colors.lua'
+
 [templates.helix]
 input_path = '~/.config/matugen/templates/helix.toml'
 output_path = '~/.config/helix/themes/dynamic.toml'
