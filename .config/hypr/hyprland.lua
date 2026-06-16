@@ -9,7 +9,7 @@
 -- Create your files separately and then require them like this:
 -- require("myColors")
 
-require(colors)
+local colors = require("colors")
 
 ------------------
 ---- MONITORS ----
@@ -101,8 +101,8 @@ hl.config({
         border_size = 2,
 
         col = {
-            active_border   = { colors = {primary, primary_container}, angle = 45 },
-            inactive_border = surface_variant,
+            active_border   = { colors = {colors.primary, colors.primary_container}, angle = 45 },
+            inactive_border = colors.surface_variant,
         },
 
         -- Set to true to enable resizing windows by clicking and dragging on borders and gaps

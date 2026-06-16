@@ -5,12 +5,12 @@ reload_apps = true
 input_path = '~/.config/matugen/templates/quickshell.json'
 output_path = '~/.config/quickshell/colors.json'
 
-[templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland.conf'
+[templates.hyprland-conf]
+input_path = '~/.config/matugen/templates/hyprland-conf.conf'
 output_path = '~/.config/hypr/colors.conf'
 
-[templates.hyprland]
-input_path = '~/.config/matugen/templates/hyprland.lua'
+[templates.hyprland-lua]
+input_path = '~/.config/matugen/templates/hyprland-lua.lua'
 output_path = '~/.config/hypr/colors.lua'
 
 [templates.helix]
