@@ -7,7 +7,7 @@ previous_devices=()
 send_notification() {
     local action=$1
     local device_name=$2
-    notify-send "Bluetooth Device $action" "$device_name has been $action."
+    notify-send -u normal -t 5000 "Bluetooth Device $action" "$device_name has been $action."
 }
 
 # Infinite loop to monitor Bluetooth devices
