@@ -30,8 +30,8 @@ hl.monitor({
 
 -- Set programs that you use
 local terminal    = "kitty"
-local menu        = "quickshell --path ~/.config/quickshell/appLauncher"
--- local menu        = "hyprlauncher"
+-- local menu        = "quickshell --path ~/.config/quickshell/appLauncher"
+local menu        = "hyprlauncher"
 
 
 -------------------

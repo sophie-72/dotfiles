@@ -13,6 +13,10 @@ output_path = '~/.config/hypr/colors.conf'
 input_path = '~/.config/matugen/templates/hyprland-lua.lua'
 output_path = '~/.config/hypr/colors.lua'
 
+[templates.hyprtoolkit]
+input_path = '~/.config/matugen/templates/hyprtoolkit.conf'
+output_path = '~/.config/hypr/hyprtoolkit.conf'
+
 [templates.helix]
 input_path = '~/.config/matugen/templates/helix.toml'
 output_path = '~/.config/helix/themes/dynamic.toml'
