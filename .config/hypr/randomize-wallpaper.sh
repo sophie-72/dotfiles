@@ -1,43 +1,52 @@
-#!/bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-# Check if we are running at login/startup
 IS_INIT=false
-if [[ "$1" == "--init" ]]; then
-    IS_INIT=true
+if [[ "${1-}" == "--init" ]]; then
+  IS_INIT=true
 fi
 
-WALLPAPER_DIR="$HOME/wallpapers/"
+WALLPAPER_DIR="$HOME/wallpapers"
+LINK="$HOME/.config/hypr/current_wallpaper.png"
 
-# ONLY filter out the current wallpaper if we are doing a mid-session manual swap
-if [ "$IS_INIT" = false ] && [ -L "$HOME/.config/hypr/current_wallpaper.png" ]; then
-    CURRENT_WALL=$(readlink -f "$HOME/.config/hypr/current_wallpaper.png")
-    WALLPAPER=$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$CURRENT_WALL")" | shuf -n 1)
+# Pick wallpaper
+if [[ "$IS_INIT" == false && -L "$LINK" ]]; then
+  current="$(readlink -f "$LINK" 2>/dev/null || true)"
+  WALLPAPER="$(find "$WALLPAPER_DIR" -type f ! -name "$(basename "$current")" 2>/dev/null | shuf -n 1)"
 else
-    # On login, grab a completely unrestricted random wallpaper instantly
-    WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+  WALLPAPER="$(find "$WALLPAPER_DIR" -type f 2>/dev/null | shuf -n 1)"
 fi
 
-# Safety exit if directory is empty
-[ -z "$WALLPAPER" ] && exit 1
-
-# Create a permanent symlink pointing to the newly chosen wallpaper
-ln -sf "$WALLPAPER" "$HOME/.config/hypr/current_wallpaper.png"
-
-# Dynamic Color Injection (Happens BEFORE wallpaper renders on screen)
-if command -v matugen &> /dev/null; then
-    matugen image "$WALLPAPER" -m dark
-    
-    # Reload Kitty instances instantly on the fly
-    kill -SIGUSR1 $(pgrep kitty) 2>/dev/null
+# Safety exit if directory is empty or selection failed
+if [[ -z "${WALLPAPER:-}" ]]; then
+  exit 1
 fi
 
-makoctl reload
+# Update symlink
+ln -sf "$WALLPAPER" "$LINK"
 
-# Set the wallpaper based on execution mode
-if [ "$IS_INIT" = true ]; then
-    # Force awww to override its automatic boot cache instantly
-    awww img "$WALLPAPER" --transition-type none
+# Generate colors (must be non-interactive)
+if command -v matugen >/dev/null 2>&1; then
+  matugen image "$WALLPAPER" -m dark --source-color-index 0
+fi
+
+# Reload apps that should pick up new colors
+makoctl reload >/dev/null 2>&1 || true
+if pgrep -x kitty >/dev/null 2>&1; then
+  kill -SIGUSR1 "$(pgrep -x kitty | head -n 1)" 2>/dev/null || true
+fi
+
+# Set wallpaper
+if [[ "$IS_INIT" == true ]]; then
+  awww img "$WALLPAPER" --transition-type none
 else
-    # INSTANT mid-session swap with the crisp, geometric wave transition
-    awww img "$WALLPAPER" --transition-type wave --transition-angle 45 --transition-duration 1.5
+  awww img "$WALLPAPER" --transition-type wave --transition-angle 45 --transition-duration 1.5
+fi
+
+# If this is mid-session manual swap, restart QuickShell so it re-reads theme/colors
+if [[ "$IS_INIT" == false ]]; then
+  if pgrep -x quickshell >/dev/null 2>&1; then
+    pkill -x quickshell
+  fi
+  command -v quickshell >/dev/null 2>&1 && quickshell &
 fi
