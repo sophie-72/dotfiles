@@ -50,6 +50,13 @@ if [ "$SHELL" != "$(which zsh)" ]; then
     sudo chsh -s "$(which zsh)"
 fi
 
+# Zen Browser Theme
+touch ~/.config/zen/zen-theme.css
+PROFILE_DIR="$(find "$HOME/.config/zen" -maxdepth 1 -type d -name '*.Default (release)' 2>/dev/null | head -n1)"
+CHROME_DIR="$PROFILE_DIR/chrome"
+mkdir -p "$CHROME_DIR"
+ln -sf "$HOME/.config/zen/zen-theme.css" "$CHROME_DIR/userChrome.css"
+
 echo -e "\nStarting and enabling bluetooth"
 sudo systemctl enable --now bluetooth
 

@@ -44,3 +44,7 @@ output_path = '~/.config/qt6ct/colors/matugen.conf'
 [templates.mako]
 input_path = '~/.config/matugen/templates/mako.conf'
 output_path = '~/.config/mako/config'
+
+[templates.zen]
+input_path = '~/.config/matugen/templates/zen-theme.css'
+output_path = '~/.config/zen/zen-theme.css'
