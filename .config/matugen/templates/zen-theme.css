@@ -1,12 +1,95 @@
+/* ==========================================================================
+   1. CORE VARIABLES & STRUCTURAL BACKGROUND SHIELD (DARK LAYER)
+   ========================================================================== */
 #zen-browser-background {
   --zen-main-browser-background: {{colors.background.default.hex}} !important;
 }
 
-#main-window, zen-workspace {
+:root, #main-window, zen-workspace {
   --toolbox-textcolor: {{colors.on_background.default.hex}} !important;
+  --panel-background: {{colors.background.default.hex}} !important;
+  
+  --tab-selected-bgcolor: {{colors.on_primary.default.hex}} !important;
+  --tab-selected-textcolor: {{colors.primary.default.hex}} !important;
 }
 
-zen-workspace {
-  --tab-selected-bgcolor: {{colors.on_background.default.hex}} !important;
-  --tab-selected-textcolor: {{colors.background.default.hex}} !important;
+#nav-bar, 
+#urlbar-background,
+.urlbar-background,
+#TabsToolbar {
+  background-color: {{colors.background.default.hex}} !important;
+}
+
+/* ==========================================================================
+   2. TAB INTERFACE (DYNAMIC LIGHT ACTIVE / DARK INACTIVE)
+   ========================================================================== */
+
+.tab-background[selected="true"],
+.tabbrowser-tab[selected="true"] .tab-background {
+  background-image: none !important;
+  background-color: {{colors.on_background.default.hex}} !important;
+  opacity: 1 !important;
+}
+
+.tab-background:not([selected="true"]) {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-label,
+.tabbrowser-tab[selected="true"] .tab-text,
+.tabbrowser-tab[selected="true"] {
+  color: {{colors.background.default.hex}} !important;
+  --identity-icon-color: {{colors.background.default.hex}} !important;
+}
+
+.tabbrowser-tab:not([selected="true"]) .tab-label,
+.tabbrowser-tab:not([selected="true"]) .tab-text {
+  color: {{colors.on_background.default.hex}} !important;
+}
+
+#tabs-newtab-button,
+.tabs-newtab-button,
+#tabs-newtab-button .toolbarbutton-icon,
+#tabs-newtab-button .toolbarbutton-text {
+  color: {{colors.on_background.default.hex}} !important;
+  fill: {{colors.on_background.default.hex}} !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* ==========================================================================
+   3. FLOATING OVERLAY & MODAL FIX (Ctrl+T / Ctrl+L)
+   ========================================================================== */
+#zen-search-container,
+.zen-search-modal,
+[panel-popup="true"] {
+  background-color: {{colors.background.default.hex}} !important;
+  color: {{colors.on_background.default.hex}} !important;
+  --toolbar-field-background: {{colors.background.default.hex}} !important;
+  --toolbar-field-color: {{colors.on_background.default.hex}} !important;
+}
+
+#zen-search-input,
+#zen-search-container input,
+#urlbar-input,
+.urlbar-input-container input {
+  color: {{colors.on_background.default.hex}} !important;
+  background-color: transparent !important;
+  -moz-text-fill-color: {{colors.on_background.default.hex}} !important;
+}
+
+.urlbarView-row, 
+.urlbarView-title, 
+.urlbarView-url,
+#urlbar-results {
+  color: {{colors.on_background.default.hex}} !important;
+}
+
+input::placeholder,
+#urlbar-input::placeholder,
+#zen-search-input::placeholder {
+  color: {{colors.on_background.default.rgba}} !important;
+  -moz-text-fill-color: {{colors.on_background.default.rgba}} !important;
+  opacity: 0.4 !important;
 }
