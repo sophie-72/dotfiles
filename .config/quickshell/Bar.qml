@@ -1,7 +1,6 @@
 import Quickshell
 import QtQuick
 import QtQuick.Layouts
-import qs.battery
 import qs.bluetooth
 import qs.clock
 import qs.keyboard
@@ -74,10 +73,6 @@ Scope {
                 }
 
                 SystemUsage {
-                    Layout.alignment: Qt.AlignHCenter
-                }
-
-                Battery {
                     Layout.alignment: Qt.AlignHCenter
                 }
 
