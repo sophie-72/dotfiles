@@ -4,7 +4,7 @@
 - Text Editor: [Helix](https://helix-editor.com/)
 - Display Manager: [SDDM](https://github.com/sddm/sddm/)
 - Compositor: [Hyprland](https://hyprland.org/)
-- Bar, Power Menu & Application Launcher: [Quickshell](https://quickshell.org/)
+- Bar & Power Menu: [Quickshell](https://quickshell.org/)
 - Notification Daemon: [Mako](https://github.com/emersion/mako)
 - Terminal: [Kitty](https://github.com/kovidgoyal/kitty)
 
