@@ -9,7 +9,7 @@ PopupWindow {
     anchor.item: systemUsageWidget
     anchor.rect.x: systemUsageWidget.x + 40
     implicitWidth: 250
-    implicitHeight: 275
+    implicitHeight: contentLayout.implicitHeight + 20
     visible: false
     color: "transparent"
 
@@ -19,6 +19,7 @@ PopupWindow {
         radius: 10
 
         ColumnLayout {
+            id: contentLayout
             anchors.fill: parent
             anchors.leftMargin: 10
 
