@@ -10,7 +10,7 @@ PopupWindow {
     anchor.item: bluetoothWidget
     anchor.rect.x: bluetoothWidget.x + 40
     implicitWidth: 250
-    implicitHeight: 75
+    implicitHeight: contentLayout.implicitHeight + 20
     visible: false
     color: "transparent"
 
@@ -20,11 +20,12 @@ PopupWindow {
         radius: 10
 
         ColumnLayout {
+            id: contentLayout
             anchors.fill: parent
             anchors.leftMargin: 10
 
             Text {
-                text: "Connected"
+                text: "Connected Devices"
                 color: Theme.textColor
                 font.weight: Font.Bold
             }
@@ -41,29 +42,13 @@ PopupWindow {
 
                     text: " ".repeat(4) + connectedDevice.modelData.name
                     color: Theme.textColor
-                    font.weight: Font.Bold
                 }
             }
+
             Text {
-                text: "Paired"
+                text: "No devices connected"
                 color: Theme.textColor
-                font.weight: Font.Bold
-            }
-
-            Repeater {
-                model: ScriptModel {
-                    values: [...Bluetooth.devices.values].filter(device => device.paired).sort((a, b) => (b.paired - a.paired))
-                }
-
-                Text {
-                    id: pairedDevice
-
-                    required property BluetoothDevice modelData
-
-                    text: " ".repeat(4) + pairedDevice.modelData.name
-                    color: Theme.textColor
-                    font.weight: Font.Bold
-                }
+                visible: contentLayout.children.length <= 3
             }
         }
     }
