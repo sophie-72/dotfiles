@@ -8,8 +8,8 @@ PopupWindow {
 
     anchor.item: systemUsageWidget
     anchor.rect.x: systemUsageWidget.x + 40
-    implicitWidth: 250
-    implicitHeight: contentLayout.implicitHeight + 20
+    implicitWidth: 280
+    implicitHeight: contentLayout.implicitHeight + 24
     visible: false
     color: "transparent"
 
@@ -21,34 +21,80 @@ PopupWindow {
         ColumnLayout {
             id: contentLayout
             anchors.fill: parent
-            anchors.leftMargin: 10
+            anchors.margins: 12
+            spacing: 10
 
-            Text {
-                text: "CPU usage: " + CpuUsage.utilizationPercentage + "%"
-                font.weight: Font.Bold
-                color: Theme.textColor
-            }
+            ColumnLayout {
+                spacing: 2
 
-            Text {
-                text: "RAM usage: " + MemoryUsage.usedMemory + "/" + MemoryUsage.totalMemory
-                font.weight: Font.Bold
-                color: Theme.textColor
-            }
-
-            Text {
-                text: {
-                    const devices = StorageUsage.devices;
-                    let output = "Storage usage:";
-
-                    for (const device of devices) {
-                        const data = " ".repeat(4) + device.device + " (" + device.mountedOn + "): " + device.size + "\n" + " ".repeat(8) + "Used: " + device.used + "\n" + " ".repeat(8) + "Available: " + device.available;
-                        output += "\n" + data;
-                    }
-
-                    return output;
+                Text {
+                    text: "CPU Utilization"
+                    font.weight: Font.DemiBold
+                    font.pointSize: 9
+                    color: Theme.textColor
+                    opacity: 0.7
                 }
-                font.weight: Font.Bold
-                color: Theme.textColor
+
+                Text {
+                    text: CpuUsage.utilizationPercentage + "%"
+                    font.weight: Font.Bold
+                    font.pointSize: 12
+                    color: Theme.textColor
+                }
+            }
+
+            ColumnLayout {
+                spacing: 2
+
+                Text {
+                    text: "Memory Usage"
+                    font.weight: Font.DemiBold
+                    font.pointSize: 9
+                    color: Theme.textColor
+                    opacity: 0.7
+                }
+
+                Text {
+                    text: MemoryUsage.usedMemory + " / " + MemoryUsage.totalMemory
+                    font.weight: Font.Bold
+                    color: Theme.textColor
+                }
+            }
+
+            ColumnLayout {
+                spacing: 4
+                Layout.fillWidth: true
+
+                Text {
+                    text: "Storage"
+                    font.weight: Font.DemiBold
+                    font.pointSize: 9
+                    color: Theme.textColor
+                    opacity: 0.7
+                }
+
+                Repeater {
+                    model: StorageUsage.devices || []
+                    
+                    delegate: ColumnLayout {
+                        spacing: 2
+                        Layout.fillWidth: true
+                        
+                        Text {
+                            text: modelData.device + " (" + modelData.mountedOn + ")"
+                            font.weight: Font.Bold
+                            color: Theme.textColor
+                        }
+                        
+                        Text {
+                            text: "Used: " + modelData.used + " | Avail: " + modelData.available + " (Total: " + modelData.size + ")"
+                            font.pointSize: 9
+                            color: Theme.textColor
+                            opacity: 0.8
+                            Layout.leftMargin: 8
+                        }
+                    }
+                }
             }
         }
     }
