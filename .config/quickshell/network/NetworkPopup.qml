@@ -10,7 +10,7 @@ PopupWindow {
     anchor.item: networkWidget
     anchor.rect.x: networkWidget.x + 40
     implicitWidth: 250
-    implicitHeight: 75
+    implicitHeight: contentLayout.implicitHeight + 20
     visible: false
     color: "transparent"
 
@@ -20,6 +20,7 @@ PopupWindow {
         radius: 10
 
         ColumnLayout {
+            id: contentLayout
             anchors.fill: parent
             anchors.leftMargin: 10
 
@@ -32,7 +33,6 @@ PopupWindow {
             Text {
                 text: NetworkInterfaces.interfaces
                 color: Theme.textColor
-                font.weight: Font.Bold
             }
         }
     }
