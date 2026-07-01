@@ -229,7 +229,7 @@ hl.config({
         kb_layout  = "us,ca",
         kb_variant = "",
         kb_model   = "",
-        kb_options = "",
+        kb_options = "grp:alt_shift_toggle",
         kb_rules   = "",
 
         numlock_by_default = true,
