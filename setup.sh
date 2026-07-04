@@ -22,7 +22,7 @@ echo -e "\nInstalling required packages"
 paru -S --needed --noconfirm \
     jq curl zsh helix openssh papirus-icon-theme \
     less man-db man-pages \
-    sddm awww hyprland hypridle hyprlock \
+    sddm awww fuzzel hyprland hypridle hyprlock \
     xdg-desktop-portal-hyprland hyprpolkitagent xdg-utils \
     udiskie kitty qt5-base qt6-5compat quickshell \
     matugen mako vim wireplumber brightnessctl playerctl \
