@@ -55,6 +55,7 @@ hl.on("hyprland.start", function ()
   hl.exec_cmd("udiskie")
   hl.exec_cmd("quickshell")
   hl.exec_cmd("~/.config/bluetooth-monitor.sh")
+  hl.exec_cmd("gnome-keyring-daemon --start --components=secrets")
 end)
 
 
