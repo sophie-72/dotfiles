@@ -16,7 +16,7 @@ Singleton {
 
     PanelWindow {
         focusable: true
-        implicitWidth: (root.itemSize * 3) + (root.margin * 8)
+        implicitWidth: (root.itemSize * 4) + (root.margin * 8)
         implicitHeight: root.itemSize + (root.margin * 4)
         visible: root.visible
         color: Theme.transparentBackgroundColor
@@ -47,6 +47,11 @@ Singleton {
                     iconSize: root.iconSize
                 }
 
+                SuspendButton {
+                    buttonSize: root.itemSize
+                    buttonRadius: root.radius
+                    iconSize: root.iconSize
+                }
                 LockButton {
                     buttonSize: root.itemSize
                     buttonRadius: root.radius
