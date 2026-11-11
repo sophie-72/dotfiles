@@ -21,6 +21,40 @@
 }
 
 /* ==========================================================================
+   1.1 NAVIGATION, TOOLBAR & SPACES ICON FIXES (NEW)
+   ========================================================================== */
+/* Fixes back, forward, refresh, extensions, and general toolbar icons */
+#nav-bar .toolbarbutton-1,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-icon,
+#nav-bar .toolbarbutton-1 > .toolbarbutton-badge-container,
+.toolbarbutton-icon,
+#back-button,
+#forward-button,
+#reload-button,
+#stop-button,
+#home-button {
+  fill: {{colors.on_background.default.hex}} !important;
+  color: {{colors.on_background.default.hex}} !important;
+}
+
+/* Fixes Zen workspace / spaces sidebar icons and buttons */
+#zen-sidebar-splitter,
+#zen-left-sidebar,
+zen-current-workspace-indicator,
+.zen-workspace-icon,
+.zen-sidebar-action,
+#zen-aside-navigation toolbarbutton {
+  fill: {{colors.on_background.default.hex}} !important;
+  color: {{colors.on_background.default.hex}} !important;
+}
+
+/* Ensure disabled or secondary buttons remain visible with reduced opacity */
+#nav-bar .toolbarbutton-1[disabled="true"] {
+  opacity: 0.4 !important;
+  fill: {{colors.on_background.default.hex}} !important;
+}
+
+/* ==========================================================================
    2. TAB INTERFACE (DYNAMIC LIGHT ACTIVE / DARK INACTIVE)
    ========================================================================== */
 
